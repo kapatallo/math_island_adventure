@@ -97,17 +97,18 @@
             {
               "question": "Il y a 7 ballons, 8 gâteaux et 5 boissons. Combien d'objets y a-t-il en tout ?",
               "answer": 20,
-              "hint": "Ajoute 7, 8, et 5 ensemble."
+              "hint": "Additionne 7 et 8 puis rajoute 5"
             },
             {
               "question": "Nous avons 9 chaises, 6 tables et 4 nappes. Combien d'objets avons-nous ?",
               "answer": 19,
-              "hint": "Additionne 9, 6, et 4."
+              "hint": "Additionne 9 et 6 puis rajoute 4."
             }
           ]
         }
       ]
     },
+
     {
       "name": "L'Île des Mystères",
       "theme": "Soustraction",
@@ -135,12 +136,12 @@
           "text": "Guide le cerf à travers la forêt en comptant les pas restants.",
           "questions": [
             {
-              "question": "Le cerf a fait 23 pas, il doit encore faire 12 pas. Combien de pas a-t-il déjà faits ?",
+              "question": "Le cerf doit faire 23 pas pour arriver à destination , il a déjà avancé de 12 pas. Combien de pas lui reste-t-il à faire ?",
               "answer": 11,
               "hint": "Soustrais 12 de 23."
             },
             {
-              "question": "Il a parcouru 30 pas, mais il doit encore faire 10 pas. Combien de pas lui reste-t-il à faire ?",
+              "question": "Il a doit parcourir 30 pas, mais il a déjà fait 10 pas. Combien de pas lui reste-t-il à faire ?",
               "answer": 20,
               "hint": "Soustrais 10 de 30."
             }
@@ -370,12 +371,12 @@
             {
               "question": "Résous : 12 ÷ 4 = ?",
               "answer": 3,
-              "hint": "Utilise la table de division pour 4."
+              "hint": "Utilise la table de mulltiplication de 4 ."
             },
             {
               "question": "Résous : 15 ÷ 3 = ?",
               "answer": 5,
-              "hint": "Utilise la table de division pour 3."
+              "hint": "Utilise la table de multiplication pour 3."
             }
           ]
         },

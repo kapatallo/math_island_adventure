@@ -1,0 +1,6 @@
+-Système de score (mauvaises réponses/ indices utilisés )
+-récompenses (trophées/étoiles)
+-Création de profil
+-sauvegarde de l'avancement (Json)
+-L'utilisateur peut reprendre là où il s'était arrêté
+-Profil de l'apprenant (côté prof): graphique général + possiblité d'accéder aux erreurs 
