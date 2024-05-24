@@ -1,8 +1,9 @@
 import pygame
 from QuestionPage import QuestionPage
+from CoursePage import CoursePage
 
 class ArchipelagoPage:
-    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions):
+    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images):
         self.screen = screen
         self.main_island_image = main_island_image
         self.avatar_image = avatar_image
@@ -13,6 +14,7 @@ class ArchipelagoPage:
         self.background_image = background_image
         self.titles = titles
         self.questions = questions
+        self.course_images = course_images
 
         self.avatar_pos = list(positions[0])  # Initial avatar position on the first îlot
         self.current_ilot_index = 0  # Start on the first îlot
@@ -49,7 +51,6 @@ class ArchipelagoPage:
         self.screen.blit(self.background, (0, 0))
         self.screen.blit(self.main_island, (300, 30))  # Center the main island
 
-
         for i, pos in enumerate(self.positions):
             ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
             self.screen.blit(ilot_image, pos)
@@ -72,8 +73,7 @@ class ArchipelagoPage:
         self.screen.blit(self.avatar_moving, self.avatar_pos)
         pygame.display.flip()
 
-    def move_avatar(self, target_index):
-        target_pos = self.positions[target_index]
+    def move_avatar(self, target_pos):
         steps = 30
         x_step = (target_pos[0] - self.avatar_pos[0]) / steps
         y_step = (target_pos[1] - self.avatar_pos[1]) / steps
@@ -82,28 +82,40 @@ class ArchipelagoPage:
             self.avatar_pos[1] += y_step
             self.draw_screen_moving()
             pygame.time.delay(50)
-        self.current_ilot_index = target_index
         self.draw_screen()  # Affiche l'image de l'avatar normal après le déplacement
- # Change to QuestionPage
-        title = self.titles[target_index]
-        text = self.questions[target_index]['text']
-        questions = self.questions[target_index]['questions']
-        self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions)
 
     def handle_event(self, event):
         if hasattr(self, 'question_page'):
             self.question_page.handle_event(event)
+        elif hasattr(self, 'course_page'):
+            self.course_page.handle_event(event)
         else:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
-                for i, pos in enumerate(self.positions):
-                    ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
-                    if ilot_image.get_rect(topleft=pos).collidepoint(mouse_pos):
-                        self.move_avatar(i)
-                        break
+                main_island_rect = self.main_island.get_rect(topleft=(300, 30))
+                if main_island_rect.collidepoint(mouse_pos):
+                    self.move_avatar((300, 300))
+                    self.course_page = CoursePage(self.screen, self.course_images, self.return_to_archipelago)
+                else:
+                    for i, pos in enumerate(self.positions):
+                        ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
+                        if ilot_image.get_rect(topleft=pos).collidepoint(mouse_pos):
+                            self.move_avatar(pos)
+                            title = self.titles[i]
+                            text = self.questions[i]['text']
+                            questions = self.questions[i]['questions']
+                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions)
+                            break
+
+            
+    def return_to_archipelago(self):
+        if hasattr(self, 'course_page'):
+            del self.course_page
 
     def update(self):
         if hasattr(self, 'question_page'):
             self.question_page.update()
+        elif hasattr(self, 'course_page'):
+            self.course_page.update()
         else:
             self.draw_screen()

@@ -85,7 +85,7 @@ class MainPage:
             self.avatar_pos[0] += x_step
             self.avatar_pos[1] += y_step
             self.draw_screen_moving()
-            pygame.time.delay(50)
+            pygame.time.delay(2)
         self.current_archipelago = self.avatar_target
 
     def handle_event(self, event):
