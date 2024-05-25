@@ -26,6 +26,7 @@ class QuestionPage:
         self.message = ""
         self.message_color = pygame.Color('black')
 
+        self.correct_answer_given = False  # Flag to track if correct answer is given
 
         self.load_images()
         self.scale_images()
@@ -118,7 +119,6 @@ class QuestionPage:
         self.screen.blit(txt_surface, text_rect)
 
     def draw_message(self):
-        # Assurez-vous que le message ne dépasse pas 210 pixels de largeur
         words = self.message.split(' ')
         lines = []
         current_line = []
@@ -138,7 +138,6 @@ class QuestionPage:
         if current_line:
             lines.append(' '.join(current_line))
 
-        # Modifiez ici pour ajuster la position verticale de base du message
         base_y_position = 208
         x_position = 339  # Centré horizontalement
         y_offset = 0
@@ -148,17 +147,17 @@ class QuestionPage:
             message_rect = line_surface.get_rect(center=(x_position, base_y_position + y_offset))
             self.screen.blit(line_surface, message_rect)
             y_offset += self.font_message.get_linesize()
-
     def draw_screen(self):
         self.screen.blit(self.background, (0, 0))
         self.draw_text(self.title, (550, 70), self.font_title, 350)
         self.draw_text(self.text, (520, 120), self.font_text, 320)
-        self.draw_text(self.questions[self.current_question]['question'], (520, 320), self.font_text, 320)
+
+        if self.current_question < len(self.questions):
+            self.draw_text(self.questions[self.current_question]['question'], (520, 320), self.font_text, 320)
         
         self.screen.blit(self.level_image, (590, 160))
         self.screen.blit(self.back_button, self.back_button_rect.topleft)  # Draw back button
 
-        
         if self.avatar_state == "normal":
             self.screen.blit(self.avatar_qst, (70, 150))
         elif self.avatar_state == "correct":
@@ -193,6 +192,9 @@ class QuestionPage:
                         self.input_color = pygame.Color('green')
                         self.avatar_state = "correct"
                         self.message = "Bravo ! C'est la bonne réponse."
+                        self.user_input = ""  # Clear the input
+                        self.correct_answer_given = True
+                        self.avatar_timer = pygame.time.get_ticks()
                     else:
                         self.input_color = pygame.Color('red')
                         self.avatar_state = "incorrect"
@@ -218,6 +220,9 @@ class QuestionPage:
                             self.input_color = pygame.Color('green')
                             self.avatar_state = "correct"
                             self.message = "Bonne réponse !"
+                            self.user_input = ""  # Clear the input
+                            self.correct_answer_given = True
+                            self.avatar_timer = pygame.time.get_ticks()
                         else:
                             self.input_color = pygame.Color('red')
                             self.avatar_state = "incorrect"
@@ -235,7 +240,12 @@ class QuestionPage:
 
     def update(self):
         if self.avatar_state in ["correct", "incorrect"]:
-            if pygame.time.get_ticks() - self.avatar_timer > 5000:
+            if pygame.time.get_ticks() - self.avatar_timer > 3000:
+                if self.correct_answer_given:
+                    self.current_question += 1  # Move to the next question
+                    self.correct_answer_given = False
+                    if self.current_question >= len(self.questions):
+                        self.return_callback()  # Return to archipelago if all questions are answered
                 self.avatar_state = "normal"
                 self.message = ""
         self.draw_screen()
