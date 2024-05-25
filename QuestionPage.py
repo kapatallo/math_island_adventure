@@ -2,12 +2,14 @@ import os
 import pygame
 
 class QuestionPage:
-    def __init__(self, screen, background_image, title, text, questions):
+    def __init__(self, screen, background_image, title, text, questions, level_image):
         self.screen = screen
         self.background_image_path = background_image
         self.title = title
         self.text = text
         self.questions = questions
+        self.level_image_path = level_image 
+
         self.current_question = 0
         self.user_input = ""
         self.input_active = False
@@ -34,6 +36,7 @@ class QuestionPage:
         self.avatar_indice = pygame.image.load('avatar_indice.png')
         self.button_validate = pygame.image.load('valider.png')
         self.button_hint = pygame.image.load('indice.png')
+        self.level_image = pygame.image.load(os.path.join('qst_image', self.level_image_path))
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen.get_width(), self.screen.get_height()))
@@ -41,8 +44,9 @@ class QuestionPage:
         self.avatar_true = self.scale_image(self.avatar_true, 400, 400)
         self.avatar_false = self.scale_image(self.avatar_false, 400, 400)
         self.avatar_indice = self.scale_image(self.avatar_indice, 400, 400)
-        self.button_validate = self.scale_image(self.button_validate, 175,100)
+        self.button_validate = self.scale_image(self.button_validate, 175, 100)
         self.button_hint = self.scale_image(self.button_hint, 150, 100)
+        self.level_image = self.scale_image(self.level_image, 300, 150)  # Adjust size as needed
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -140,6 +144,9 @@ class QuestionPage:
         self.draw_text(self.title, (550, 70), self.font_title, 350)
         self.draw_text(self.text, (520, 120), self.font_text, 320)
         self.draw_text(self.questions[self.current_question]['question'], (520, 320), self.font_text, 320)
+        
+        self.screen.blit(self.level_image, (590, 160))
+
         
         if self.avatar_state == "normal":
             self.screen.blit(self.avatar_qst, (70, 150))

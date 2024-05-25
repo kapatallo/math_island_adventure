@@ -1,1 +1,1 @@
-center=(self.screen.get_width() // 2, self.screen.get_height() - 70)
+1000

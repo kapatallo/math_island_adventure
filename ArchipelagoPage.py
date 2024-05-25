@@ -15,7 +15,6 @@ class ArchipelagoPage:
         self.titles = titles
         self.questions = questions
         self.course_images = course_images
-
         self.avatar_pos = list(positions[0])  # Initial avatar position on the first îlot
         self.current_ilot_index = 0  # Start on the first îlot
         self.ilot_states = ['locked'] * 6  # All îlots start as locked
@@ -104,7 +103,8 @@ class ArchipelagoPage:
                             title = self.titles[i]
                             text = self.questions[i]['text']
                             questions = self.questions[i]['questions']
-                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions)
+                            image_qst = self.questions[i]['image']
+                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst)
                             break
 
             
