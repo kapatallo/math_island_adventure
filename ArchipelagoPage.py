@@ -3,7 +3,7 @@ from QuestionPage import QuestionPage
 from CoursePage import CoursePage
 
 class ArchipelagoPage:
-    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images):
+    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images, return_callback):
         self.screen = screen
         self.main_island_image = main_island_image
         self.avatar_image = avatar_image
@@ -15,6 +15,11 @@ class ArchipelagoPage:
         self.titles = titles
         self.questions = questions
         self.course_images = course_images
+        self.return_callback = return_callback
+
+        self.back_button = None
+        self.back_button_rect = None
+
         self.avatar_pos = list(positions[0])  # Initial avatar position on the first îlot
         self.current_ilot_index = 0  # Start on the first îlot
         self.ilot_states = ['locked'] * 6  # All îlots start as locked
@@ -22,6 +27,7 @@ class ArchipelagoPage:
         self.load_images()
         self.scale_images()
         self.load_font()
+        self.create_buttons()
 
     def load_font(self):
         self.font = pygame.font.Font(None, 24)  # Default font and size 24
@@ -33,22 +39,31 @@ class ArchipelagoPage:
         self.avatar_moving = pygame.image.load(self.avatar_moving_image)
         self.ilot_done = pygame.image.load(self.ilot_done_image)
         self.ilot_locked = pygame.image.load(self.ilot_locked_image)
+        self.back_button = pygame.image.load('back_button.png')
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (1000, 600))
         self.main_island = pygame.transform.scale(self.main_island, (400, 400))
-        self.avatar = pygame.transform.scale(self.avatar, (100, 100))
-        self.avatar_moving = pygame.transform.scale(self.avatar_moving, (100, 100))
+        self.avatar = pygame.transform.scale(self.avatar,( 100, 100))
+        self.avatar_moving = pygame.transform.scale(self.avatar_moving,( 100, 100))
         self.ilot_done = pygame.transform.scale(self.ilot_done, (120, 120))
         self.ilot_locked = pygame.transform.scale(self.ilot_locked, (120, 120))
+        self.back_button = pygame.transform.scale(self.back_button, (50, 50))  # Adjust size as needed
+
+    def create_buttons(self):
+        self.back_button_rect = self.back_button.get_rect(topleft=(10, 10))  # Position at top left
 
     def draw_text(self, text, position):
         text_surface = self.font.render(text, True, (0, 0, 0))  # Black color
         self.screen.blit(text_surface, position)
 
+    def draw_buttons(self):
+        self.screen.blit(self.back_button, self.back_button_rect.topleft)
+
     def draw_screen(self):
         self.screen.blit(self.background, (0, 0))
         self.screen.blit(self.main_island, (300, 30))  # Center the main island
+        self.draw_buttons()
 
         for i, pos in enumerate(self.positions):
             ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
@@ -62,6 +77,7 @@ class ArchipelagoPage:
     def draw_screen_moving(self):
         self.screen.blit(self.background, (0, 0))
         self.screen.blit(self.main_island, (300, 30))  # Center the main island
+        self.draw_buttons()
 
         for i, pos in enumerate(self.positions):
             ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
@@ -91,6 +107,8 @@ class ArchipelagoPage:
         else:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = event.pos
+                if self.back_button_rect.collidepoint(mouse_pos):
+                    self.return_callback()
                 main_island_rect = self.main_island.get_rect(topleft=(300, 30))
                 if main_island_rect.collidepoint(mouse_pos):
                     self.move_avatar((300, 300))
@@ -104,13 +122,14 @@ class ArchipelagoPage:
                             text = self.questions[i]['text']
                             questions = self.questions[i]['questions']
                             image_qst = self.questions[i]['image']
-                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst)
+                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago)
                             break
 
-            
     def return_to_archipelago(self):
         if hasattr(self, 'course_page'):
             del self.course_page
+        if hasattr(self, 'question_page'):
+            del self.question_page
 
     def update(self):
         if hasattr(self, 'question_page'):

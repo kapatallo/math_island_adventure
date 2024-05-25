@@ -2,13 +2,16 @@ import os
 import pygame
 
 class QuestionPage:
-    def __init__(self, screen, background_image, title, text, questions, level_image):
+    def __init__(self, screen, background_image, title, text, questions, level_image, return_callback):
         self.screen = screen
         self.background_image_path = background_image
         self.title = title
         self.text = text
         self.questions = questions
         self.level_image_path = level_image 
+        self.return_callback = return_callback  
+        self.back_button = None
+        self.back_button_rect = None
 
         self.current_question = 0
         self.user_input = ""
@@ -23,10 +26,12 @@ class QuestionPage:
         self.message = ""
         self.message_color = pygame.Color('black')
 
+
         self.load_images()
         self.scale_images()
         self.load_font()
         self.create_input_box()
+        self.create_buttons()
 
     def load_images(self):
         self.background = pygame.image.load(self.background_image_path)
@@ -37,6 +42,7 @@ class QuestionPage:
         self.button_validate = pygame.image.load('valider.png')
         self.button_hint = pygame.image.load('indice.png')
         self.level_image = pygame.image.load(os.path.join('qst_image', self.level_image_path))
+        self.back_button = pygame.image.load('back_button.png')
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen.get_width(), self.screen.get_height()))
@@ -47,6 +53,7 @@ class QuestionPage:
         self.button_validate = self.scale_image(self.button_validate, 175, 100)
         self.button_hint = self.scale_image(self.button_hint, 150, 100)
         self.level_image = self.scale_image(self.level_image, 300, 150)  # Adjust size as needed
+        self.back_button = self.scale_image(self.back_button, 50, 50)  # Adjust size as needed
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -69,6 +76,9 @@ class QuestionPage:
         self.input_box = pygame.Rect(573, 390, 200, 35)
         self.button_validate_rect = pygame.Rect(585, 435, 150, 50)
         self.button_hint_rect = pygame.Rect(598, 500, 150, 50)
+
+    def create_buttons(self):
+        self.back_button_rect = self.back_button.get_rect(topleft=(10, 10))  # Position at top left
 
     def draw_text(self, text, position, font, max_width, color=(0, 0, 0)):
         words = text.split(' ')
@@ -146,6 +156,7 @@ class QuestionPage:
         self.draw_text(self.questions[self.current_question]['question'], (520, 320), self.font_text, 320)
         
         self.screen.blit(self.level_image, (590, 160))
+        self.screen.blit(self.back_button, self.back_button_rect.topleft)  # Draw back button
 
         
         if self.avatar_state == "normal":
@@ -170,6 +181,9 @@ class QuestionPage:
                 self.input_active = False
 
             self.input_color = self.input_color_active if self.input_active else self.input_color_inactive
+
+            if self.back_button_rect.collidepoint(event.pos):
+                self.return_callback()  # Call the return callback
 
             if self.button_validate_rect.collidepoint(event.pos):
                 try:
@@ -218,6 +232,7 @@ class QuestionPage:
                     self.user_input = self.user_input[:-1]
                 else:
                     self.user_input += event.unicode
+
     def update(self):
         if self.avatar_state in ["correct", "incorrect"]:
             if pygame.time.get_ticks() - self.avatar_timer > 5000:

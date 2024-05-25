@@ -38,15 +38,20 @@ def main():
 
     main_page = MainPage(screen, screen_width, screen_height)
 
+    def return_to_main_page():
+        nonlocal current_page
+        main_page.current_archipelago = None  # Reset the current archipelago to None
+        current_page = main_page
+
     archipelago_pages = {
         "addition": ArchipelagoPage(screen, 'arch_add.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['addition']['titles'], archipelago_data['addition']['questions'], course_images['addition']),
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['addition']['titles'], archipelago_data['addition']['questions'], course_images['addition'], return_to_main_page),
         "soustraction": ArchipelagoPage(screen, 'arch_sous.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['soustraction']['titles'], archipelago_data['soustraction']['questions'], course_images['soustraction']),
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['soustraction']['titles'], archipelago_data['soustraction']['questions'], course_images['soustraction'], return_to_main_page),
         "multiplication": ArchipelagoPage(screen, 'arch_mul.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['multiplication']['titles'], archipelago_data['multiplication']['questions'], course_images['multiplication']),
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['multiplication']['titles'], archipelago_data['multiplication']['questions'], course_images['multiplication'], return_to_main_page),
         "division": ArchipelagoPage(screen, 'arch_div.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['division']['titles'], archipelago_data['division']['questions'], course_images['division']),
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['division']['titles'], archipelago_data['division']['questions'], course_images['division'], return_to_main_page),
     }
 
     current_page = main_page
