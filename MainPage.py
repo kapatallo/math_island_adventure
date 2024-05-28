@@ -1,7 +1,6 @@
 import os
 import pygame
 
-
 class MainPage:
     def __init__(self, screen, screen_width, screen_height):
         self.screen = screen
@@ -10,9 +9,9 @@ class MainPage:
         self.load_images()
         self.scale_images()
         self.set_positions()
-        self.avatar_pos = list(self.addition_pos)
         self.avatar_target = None
         self.current_archipelago = None
+        self.show_welcome_message = True
 
     def load_images(self):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -25,16 +24,18 @@ class MainPage:
         self.avatar = pygame.image.load('avatar.png')
         self.avatar_moving = pygame.image.load('avatar_moving.png')
         self.logo = pygame.image.load('logo.png')
+        self.welcome_message = pygame.image.load('msg_welcome.png')
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
-        self.addition_island = self.scale_image(self.addition_island, 300, 300)
-        self.soustraction_island = self.scale_image(self.soustraction_island, 350, 350)
+        self.addition_island = self.scale_image(self.addition_island, 350, 350)
+        self.soustraction_island = self.scale_image(self.soustraction_island, 350, 330)
         self.multiplication_island = self.scale_image(self.multiplication_island, 300, 300)
         self.division_island = self.scale_image(self.division_island, 300, 300)
         self.avatar = self.scale_image(self.avatar, 100, 100)
         self.avatar_moving = self.scale_image(self.avatar_moving, 100, 100)
         self.logo = self.scale_image(self.logo, 250, 250)
+        self.welcome_message = self.scale_image(self.welcome_message, 600, 150)
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -53,6 +54,8 @@ class MainPage:
         self.multiplication_pos = (20, 300)
         self.division_pos = (650, 350)
         self.logo_pos = (380, 3)
+        self.avatar_pos = [(self.screen_width // 2 - self.avatar.get_width() // 2)-20, self.screen_height // 2 - self.avatar.get_height() // 2]
+        self.welcome_message_pos = (450,100)
 
     def draw_screen(self):
         self.screen.blit(self.background, (0, 0))
@@ -62,6 +65,10 @@ class MainPage:
         self.screen.blit(self.division_island, self.division_pos)
         self.screen.blit(self.avatar, self.avatar_pos)
         self.screen.blit(self.logo, self.logo_pos)
+
+        if self.show_welcome_message:
+            self.screen.blit(self.welcome_message, self.welcome_message_pos)
+        
         pygame.display.flip()
 
     def draw_screen_moving(self):
@@ -91,6 +98,9 @@ class MainPage:
     def handle_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
+            if self.show_welcome_message:
+                self.show_welcome_message = False
+
             if self.addition_island.get_rect(topleft=self.addition_pos).collidepoint(mouse_pos):
                 self.avatar_target = "addition"
                 self.move_avatar(self.addition_pos, self.addition_island)
@@ -103,7 +113,14 @@ class MainPage:
             elif self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos):
                 self.avatar_target = "division"
                 self.move_avatar(self.division_pos, self.division_island)
-
+        if event.type == pygame.MOUSEMOTION:
+            mouse_pos = event.pos
+            if (self.addition_island.get_rect(topleft=self.addition_pos).collidepoint(mouse_pos) or
+                self.soustraction_island.get_rect(topleft=self.soustraction_pos).collidepoint(mouse_pos) or
+                self.multiplication_island.get_rect(topleft=self.multiplication_pos).collidepoint(mouse_pos) or
+                self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos)):
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+            else:
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
     def update(self):
         self.draw_screen()
-

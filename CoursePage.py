@@ -73,5 +73,16 @@ class CoursePage:
             elif self.current_image_index == len(self.images) - 1 and self.button_finish_rect.collidepoint(event.pos):
                 self.return_callback()
 
+        if event.type == pygame.MOUSEMOTION:
+            mouse_pos = event.pos
+            if (self.back_button_rect.collidepoint(mouse_pos) or
+                self.button_prev_rect.collidepoint(mouse_pos) or
+                self.button_next_rect.collidepoint(mouse_pos) or
+                self.button_finish_rect.collidepoint(mouse_pos)):
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+            else:
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+
     def update(self):
         self.draw_screen()

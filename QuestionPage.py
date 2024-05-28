@@ -238,6 +238,18 @@ class QuestionPage:
                 else:
                     self.user_input += event.unicode
 
+        if event.type == pygame.MOUSEMOTION:
+            mouse_pos = event.pos
+            if (self.back_button_rect.collidepoint(mouse_pos) or
+                self.button_validate_rect.collidepoint(mouse_pos) or
+                self.button_hint_rect.collidepoint(mouse_pos) or
+                self.input_box.collidepoint(mouse_pos)):
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+            else:
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+
+
     def update(self):
         if self.avatar_state in ["correct", "incorrect"]:
             if pygame.time.get_ticks() - self.avatar_timer > 3000:
@@ -249,3 +261,4 @@ class QuestionPage:
                 self.avatar_state = "normal"
                 self.message = ""
         self.draw_screen()
+

@@ -20,7 +20,7 @@ class ArchipelagoPage:
         self.back_button = None
         self.back_button_rect = None
 
-        self.avatar_pos = list(positions[0])  # Initial avatar position on the first îlot
+        self.avatar_pos = list((430,480))  # Initial avatar position on the first îlot
         self.current_ilot_index = 0  # Start on the first îlot
         self.ilot_states = ['locked'] * 6  # All îlots start as locked
 
@@ -90,8 +90,11 @@ class ArchipelagoPage:
 
     def move_avatar(self, target_pos):
         steps = 30
-        x_step = (target_pos[0] - self.avatar_pos[0]) / steps
-        y_step = (target_pos[1] - self.avatar_pos[1]) / steps
+        offset_y = 18  # Adjust this value to position the avatar just below the îlot
+        target_x = target_pos[0] + 10  # Center the avatar horizontally with the îlot
+        target_y = target_pos[1] + offset_y
+        x_step = (target_x - self.avatar_pos[0]) / steps
+        y_step = (target_y - self.avatar_pos[1]) / steps
         for _ in range(steps):
             self.avatar_pos[0] += x_step
             self.avatar_pos[1] += y_step
@@ -111,7 +114,7 @@ class ArchipelagoPage:
                     self.return_callback()
                 main_island_rect = self.main_island.get_rect(topleft=(300, 30))
                 if main_island_rect.collidepoint(mouse_pos):
-                    self.move_avatar((300, 300))
+                    self.move_avatar((400, 330))
                     self.course_page = CoursePage(self.screen, self.course_images, self.return_to_archipelago)
                 else:
                     for i, pos in enumerate(self.positions):
@@ -124,6 +127,15 @@ class ArchipelagoPage:
                             image_qst = self.questions[i]['image']
                             self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago)
                             break
+
+            if event.type == pygame.MOUSEMOTION:
+                mouse_pos = event.pos
+                if (self.back_button_rect.collidepoint(mouse_pos) or
+                    self.main_island.get_rect(topleft=(300, 30)).collidepoint(mouse_pos) or
+                    any(self.ilot_done.get_rect(topleft=pos).collidepoint(mouse_pos) if self.ilot_states[i] == 'done' else self.ilot_locked.get_rect(topleft=pos).collidepoint(mouse_pos) for i, pos in enumerate(self.positions))):
+                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+                else:
+                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
     def return_to_archipelago(self):
         if hasattr(self, 'course_page'):
