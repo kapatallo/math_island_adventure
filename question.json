@@ -3,7 +3,7 @@
         {
             "name": "L'\u00cele des Nombres Croissants",
             "theme": "Addition",
-            "completed": false,
+            "completed": true,
             "progress": 0,
             "levels": [
                 {
@@ -14,36 +14,15 @@
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Coco trouve 3 noix de coco et en trouve 4 de plus. Combien a-t-il de noix de coco en tout ?",
-                            "answer": 7,
-                            "hint": "Ajoute 3 et 4 ensemble.",
+                            "question": "Coco trouve 2 noix de coco et en trouve 3 de plus. Combien a-t-il de noix de coco en tout ?",
+                            "answer": 5,
+                            "hint": "Ajoute 2 et 3 ensemble.",
                             "completed": true
                         },
                         {
-                            "question": "Coco a 5 noix de coco et en ramasse encore 2. Combien de noix de coco a-t-il maintenant ?",
+                            "question": "Coco a 5 noix de coco et en ramasse encore 6. Combien de noix de coco a-t-il maintenant ?",
                             "answer": 7,
-                            "hint": "Compte 5 puis ajoute 2 de plus.",
-                            "completed": true
-                        }
-                    ]
-                },
-                {
-                    "title": "Construction du Radeau",
-                    "concept": "Addition de nombres \u00e0 deux chiffres sans retenue",
-                    "text": "Aide \u00e0 construire un radeau en ajoutant des morceaux de bois.",
-                    "image": "1_2.png",
-                    "completed": true,
-                    "questions": [
-                        {
-                            "question": "Il y a 12 morceaux de bois et on en ajoute 15. Combien de morceaux de bois y a-t-il maintenant ?",
-                            "answer": 27,
-                            "hint": "Ajoute d'abord les unit\u00e9s puis les dizaines.",
-                            "completed": true
-                        },
-                        {
-                            "question": "Il y a 23 planches et on en ajoute 14. Combien de planches avons-nous ?",
-                            "answer": 37,
-                            "hint": "Additionne les unit\u00e9s (3 + 4) puis les dizaines (2 + 1).",
+                            "hint": "Ajoute 5 et 6 ensemble.",
                             "completed": true
                         }
                     ]
@@ -56,36 +35,36 @@
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Il y a 5 pommes sur l'arbre et 6 pommes au sol. Combien de pommes y a-t-il en tout ?",
-                            "answer": 11,
-                            "hint": "Compte toutes les pommes ensemble.",
+                            "question": "Il y a 3 pommes sur l'arbre et 4 pommes au sol. Combien de pommes y a-t-il en tout ?",
+                            "answer": 7,
+                            "hint": "Compte toutes les pommes.",
                             "completed": true
                         },
                         {
                             "question": "Nous avons 8 oranges et 7 mandarines. Combien de fruits avons-nous ?",
                             "answer": 15,
-                            "hint": "Ajoute le nombre d'oranges au nombre de mandarines.",
+                            "hint": "Ajoute oranges et mandarines.",
                             "completed": true
                         }
                     ]
                 },
                 {
-                    "title": "Les Sacs de Tr\u00e9sor",
-                    "concept": "Addition de nombres \u00e0 deux chiffres avec retenue",
-                    "text": "Aide \u00e0 remplir des sacs de tr\u00e9sor en ajoutant des pi\u00e8ces d'or.",
-                    "image": "1_4.png",
+                    "title": "Construction du Radeau",
+                    "concept": "Addition de nombres \u00e0 deux chiffres sans retenue",
+                    "text": "Aide \u00e0 construire un radeau en ajoutant des morceaux de bois.",
+                    "image": "1_2.png",
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Il y a 27 pi\u00e8ces d'or dans un sac et on ajoute 38 pi\u00e8ces. Combien y a-t-il de pi\u00e8ces en tout ?",
-                            "answer": 65,
-                            "hint": "Ajoute d'abord les unit\u00e9s (7 + 8) puis les dizaines (2 + 3) et n'oublie pas la retenue.",
+                            "question": "Il y a 12 morceaux de bois et on en ajoute 13. Combien de morceaux de bois y a-t-il maintenant ?",
+                            "answer": 25,
+                            "hint": "Comme dans le cours, ajoute les unit\u00e9s puis les dizaines.",
                             "completed": true
                         },
                         {
-                            "question": "Nous avons 45 pi\u00e8ces d'or et ajoutons 29 pi\u00e8ces. Combien de pi\u00e8ces avons-nous ?",
-                            "answer": 74,
-                            "hint": "Additionne les unit\u00e9s (5 + 9) puis les dizaines (4 + 2) et n'oublie pas la retenue.",
+                            "question": "Il y a 23 planches et on en ajoute 14. Combien de planches avons-nous ?",
+                            "answer": 37,
+                            "hint": "Comme dans le cours, ajoute les unit\u00e9s puis les dizaines.",
                             "completed": true
                         }
                     ]
@@ -98,15 +77,36 @@
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Lisa a 14 billes, elle en gagne 19 de plus. Combien en a-t-elle maintenant ?",
-                            "answer": 33,
-                            "hint": "Additionne 14 et 19 ensemble.",
+                            "question": "Lisa a 10 billes, elle en gagne 12 de plus. Combien en a-t-elle maintenant ?",
+                            "answer": 22,
+                            "hint": "Ajoute simplement 10 et 12.",
                             "completed": true
                         },
                         {
-                            "question": "Lisa avait 20 billes, elle en ach\u00e8te 15 de plus. Combien de billes a-t-elle maintenant ?",
+                            "question": "Lisa avait 14 billes, elle en ach\u00e8te 19 de plus. Combien de billes a-t-elle maintenant ?",
+                            "answer": 33,
+                            "hint": "Ajoute simplement 14 et 19.",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Sacs de Tr\u00e9sor",
+                    "concept": "Addition de nombres \u00e0 deux chiffres avec retenue",
+                    "text": "Aide \u00e0 remplir des sacs de tr\u00e9sor en ajoutant des pi\u00e8ces d'or.",
+                    "image": "1_4.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Il y a 18 pi\u00e8ces d'or dans un sac et on ajoute 17 pi\u00e8ces. Combien y a-t-il de pi\u00e8ces en tout ?",
                             "answer": 35,
-                            "hint": "Ajoute 20 et 15.",
+                            "hint": "Ajoute les unit\u00e9s et les dizaines,mais n'oublie pas le retenue...",
+                            "completed": true
+                        },
+                        {
+                            "question": "Nous avons 27 pi\u00e8ces d'or et ajoutons 38 pi\u00e8ces. Combien de pi\u00e8ces avons-nous ?",
+                            "answer": 65,
+                            "hint": "Ajoute les unit\u00e9s puis les dizaines,mais n'oublie pas le retenue...",
                             "completed": true
                         }
                     ]
@@ -119,15 +119,15 @@
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Il y a 7 ballons, 8 g\u00e2teaux et 5 boissons. Combien d'objets y a-t-il en tout ?",
-                            "answer": 20,
-                            "hint": "Additionne 7 et 8 puis rajoute 5",
+                            "question": "Il y a 3 ballons, 5 g\u00e2teaux et 2 boissons. Combien d'objets y a-t-il en tout ?",
+                            "answer": 10,
+                            "hint": "Additionne d'abord 3 et 5, puis rajoute 2 pour obtenir le total.",
                             "completed": true
                         },
                         {
-                            "question": "Nous avons 9 chaises, 6 tables et 4 nappes. Combien d'objets avons-nous ?",
-                            "answer": 19,
-                            "hint": "Additionne 9 et 6 puis rajoute 4.",
+                            "question": "Nous avons 7 chaises, 6 tables et 4 nappes. Combien d'objets avons-nous ?",
+                            "answer": 17,
+                            "hint": "Additionne d'abord 7 et 6, puis rajoute 4 pour obtenir le total.",
                             "completed": true
                         }
                     ]
@@ -150,34 +150,13 @@
                         {
                             "question": "L'\u00e9cureuil a 9 noix, il en mange 4. Combien de noix lui reste-t-il ?",
                             "answer": 5,
-                            "hint": "Soustrais 4 de 9.",
+                            "hint": "Enleve 4 de 9.",
                             "completed": false
                         },
                         {
                             "question": "Il y avait 7 noix, l'\u00e9cureuil en cache 3. Combien reste-t-il de noix visibles ?",
                             "answer": 4,
-                            "hint": "Soustrais 3 de 7.",
-                            "completed": false
-                        }
-                    ]
-                },
-                {
-                    "title": "Le Chemin du Cerf",
-                    "concept": "Soustraction de nombres \u00e0 deux chiffres sans emprunt",
-                    "text": "Guide le cerf \u00e0 travers la for\u00eat en comptant les pas restants.",
-                    "image": "2_2.png",
-                    "completed": false,
-                    "questions": [
-                        {
-                            "question": "Le cerf doit faire 23 pas pour arriver \u00e0 destination, il a d\u00e9j\u00e0 avanc\u00e9 de 12 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
-                            "answer": 11,
-                            "hint": "Soustrais 12 de 23.",
-                            "completed": false
-                        },
-                        {
-                            "question": "Il a doit parcourir 30 pas, mais il a d\u00e9j\u00e0 fait 10 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
-                            "answer": 20,
-                            "hint": "Soustrais 10 de 30.",
+                            "hint": "Enleve 3 de 7.",
                             "completed": false
                         }
                     ]
@@ -204,27 +183,6 @@
                     ]
                 },
                 {
-                    "title": "Les Pierres Pr\u00e9cieuses",
-                    "concept": "Soustraction de nombres \u00e0 deux chiffres avec emprunt",
-                    "text": "R\u00e9cup\u00e8re des tr\u00e9sors cach\u00e9s en soustrayant des pierres pr\u00e9cieuses.",
-                    "completed": false,
-                    "image": "2_4.png",
-                    "questions": [
-                        {
-                            "question": "Il y a 54 pierres pr\u00e9cieuses, on en prend 27. Combien reste-t-il de pierres ?",
-                            "answer": 27,
-                            "hint": "Soustrais 27 de 54.",
-                            "completed": false
-                        },
-                        {
-                            "question": "Nous avons 72 pierres pr\u00e9cieuses et en perdons 35. Combien de pierres avons-nous maintenant ?",
-                            "answer": 37,
-                            "hint": "Soustrais 35 de 72.",
-                            "completed": false
-                        }
-                    ]
-                },
-                {
                     "title": "Les Bonbons de Pierre",
                     "concept": "Probl\u00e8mes simples de mots",
                     "text": "Aide Pierre \u00e0 partager ses bonbons.",
@@ -238,9 +196,51 @@
                             "completed": false
                         },
                         {
-                            "question": "Pierre avait 30 bonbons, il en donne 12 \u00e0 ses amis. Combien de bonbons lui reste-t-il ?",
-                            "answer": 18,
-                            "hint": "Soustrais 12 de 30.",
+                            "question": "Pierre avait 30 bonbons, il en donne 3 \u00e0 ses amis. Combien de bonbons lui reste-t-il ?",
+                            "answer": 27,
+                            "hint": "Soustrais 3 de 30.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Le Chemin du Cerf",
+                    "concept": "Soustraction de nombres \u00e0 deux chiffres sans emprunt",
+                    "text": "Guide le cerf \u00e0 travers la for\u00eat en comptant les pas restants.",
+                    "image": "2_2.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Le cerf doit faire 23 pas pour arriver \u00e0 destination, il a d\u00e9j\u00e0 avanc\u00e9 de 12 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
+                            "answer": 11,
+                            "hint": "Soustrais 12 de 23, les unit\u00e9s puis les dizaines...",
+                            "completed": true
+                        },
+                        {
+                            "question": "Il a doit parcourir 30 pas, mais il a d\u00e9j\u00e0 fait 10 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
+                            "answer": 20,
+                            "hint": "Soustrais 10 de 30, les unit\u00e9s puis les dizaines...",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Pierres Pr\u00e9cieuses",
+                    "concept": "Soustraction de nombres \u00e0 deux chiffres avec emprunt",
+                    "text": "R\u00e9cup\u00e8re des tr\u00e9sors cach\u00e9s en soustrayant des pierres pr\u00e9cieuses.",
+                    "completed": false,
+                    "image": "2_4.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 54 pierres pr\u00e9cieuses, on en prend 27. Combien reste-t-il de pierres ?",
+                            "answer": 27,
+                            "hint": "27 - 54, les unit\u00e9s puis les dizaines,mais n'oublie pas l'emprunt...",
+                            "completed": false
+                        },
+                        {
+                            "question": "Nous avons 72 pierres pr\u00e9cieuses et en perdons 35. Combien de pierres avons-nous maintenant ?",
+                            "answer": 37,
+                            "hint": " 35 - 72, les unit\u00e9s puis les dizaines,mais n'oublie pas l'emprunt...",
                             "completed": false
                         }
                     ]
@@ -282,13 +282,13 @@
                     "image": "3_1.png",
                     "questions": [
                         {
-                            "question": "Le scorpion trouve 4 morceaux de papyrus, il en trouve 3 fois plus. Combien de morceaux de papyrus a-t-il en tout ?",
+                            "question": "Hier, le scorpion a trouv\u00e9 4 morceaux de papyrus. Aujourd'hui, il en trouve il en trouve 3 fois plus. Combien de morceaux de papyrus a-t-il en tout ?",
                             "answer": 12,
                             "hint": "Multiplie 4 par 3.",
                             "completed": false
                         },
                         {
-                            "question": "Il y a 6 papyrus, le scorpion en trouve 2 fois plus. Combien de papyrus a-t-il maintenant ?",
+                            "question": "Il a 6 papyrus, et son ami en trouve 2 fois plus. Combien de papyrus son ami a-t-il maintenant ?",
                             "answer": 12,
                             "hint": "Multiplie 6 par 2.",
                             "completed": false
