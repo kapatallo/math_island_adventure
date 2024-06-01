@@ -3,4 +3,4 @@
 -Création de profil
 -sauvegarde de l'avancement (Json)
 -L'utilisateur peut reprendre là où il s'était arrêté
--Profil de l'apprenant (côté prof): graphique général + possiblité d'accéder aux erreurs 
+-Profil de l'apprenant (côté prof): graphe général + possiblité d'accéder aux erreurs 

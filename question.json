@@ -1,461 +1,540 @@
 {
-  "islands": [
-    {
-      "name": "L'Île des Nombres Croissants",
-      "theme": "Addition",
-      "levels": [
+    "islands": [
         {
-          "title": "Le Pont des Coco",
-          "concept": "Addition de nombres à un chiffre",
-          "text": "Aide le perroquet Coco à ramasser des noix de coco pour traverser le pont.",
-          "image":"1_1.png",         
-          "questions": [
-            {
-              "question": "Coco trouve 3 noix de coco et en trouve 4 de plus. Combien a-t-il de noix de coco en tout ?",
-              "answer": 7,
-              "hint": "Ajoute 3 et 4 ensemble."
-            },
-            {
-              "question": "Coco a 5 noix de coco et en ramasse encore 2. Combien de noix de coco a-t-il maintenant ?",
-              "answer": 7,
-              "hint": "Compte 5 puis ajoute 2 de plus."
-            }
-          ]
+            "name": "L'\u00cele des Nombres Croissants",
+            "theme": "Addition",
+            "completed": false,
+            "progress": 0,
+            "levels": [
+                {
+                    "title": "Le Pont des Coco",
+                    "concept": "Addition de nombres \u00e0 un chiffre",
+                    "text": "Aide le perroquet Coco \u00e0 ramasser des noix de coco pour traverser le pont.",
+                    "image": "1_1.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Coco trouve 3 noix de coco et en trouve 4 de plus. Combien a-t-il de noix de coco en tout ?",
+                            "answer": 7,
+                            "hint": "Ajoute 3 et 4 ensemble.",
+                            "completed": true
+                        },
+                        {
+                            "question": "Coco a 5 noix de coco et en ramasse encore 2. Combien de noix de coco a-t-il maintenant ?",
+                            "answer": 7,
+                            "hint": "Compte 5 puis ajoute 2 de plus.",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Construction du Radeau",
+                    "concept": "Addition de nombres \u00e0 deux chiffres sans retenue",
+                    "text": "Aide \u00e0 construire un radeau en ajoutant des morceaux de bois.",
+                    "image": "1_2.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Il y a 12 morceaux de bois et on en ajoute 15. Combien de morceaux de bois y a-t-il maintenant ?",
+                            "answer": 27,
+                            "hint": "Ajoute d'abord les unit\u00e9s puis les dizaines.",
+                            "completed": true
+                        },
+                        {
+                            "question": "Il y a 23 planches et on en ajoute 14. Combien de planches avons-nous ?",
+                            "answer": 37,
+                            "hint": "Additionne les unit\u00e9s (3 + 4) puis les dizaines (2 + 1).",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Le Pique-Nique des Fruits",
+                    "concept": "Addition d'objets visuels",
+                    "text": "Ramasse des fruits pour un pique-nique.",
+                    "image": "1_3.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Il y a 5 pommes sur l'arbre et 6 pommes au sol. Combien de pommes y a-t-il en tout ?",
+                            "answer": 11,
+                            "hint": "Compte toutes les pommes ensemble.",
+                            "completed": true
+                        },
+                        {
+                            "question": "Nous avons 8 oranges et 7 mandarines. Combien de fruits avons-nous ?",
+                            "answer": 15,
+                            "hint": "Ajoute le nombre d'oranges au nombre de mandarines.",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Sacs de Tr\u00e9sor",
+                    "concept": "Addition de nombres \u00e0 deux chiffres avec retenue",
+                    "text": "Aide \u00e0 remplir des sacs de tr\u00e9sor en ajoutant des pi\u00e8ces d'or.",
+                    "image": "1_4.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Il y a 27 pi\u00e8ces d'or dans un sac et on ajoute 38 pi\u00e8ces. Combien y a-t-il de pi\u00e8ces en tout ?",
+                            "answer": 65,
+                            "hint": "Ajoute d'abord les unit\u00e9s (7 + 8) puis les dizaines (2 + 3) et n'oublie pas la retenue.",
+                            "completed": true
+                        },
+                        {
+                            "question": "Nous avons 45 pi\u00e8ces d'or et ajoutons 29 pi\u00e8ces. Combien de pi\u00e8ces avons-nous ?",
+                            "answer": 74,
+                            "hint": "Additionne les unit\u00e9s (5 + 9) puis les dizaines (4 + 2) et n'oublie pas la retenue.",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Billes de Lisa",
+                    "concept": "Probl\u00e8mes simples de mots",
+                    "text": "Aide Lisa \u00e0 compter ses billes.",
+                    "image": "1_5.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Lisa a 14 billes, elle en gagne 19 de plus. Combien en a-t-elle maintenant ?",
+                            "answer": 33,
+                            "hint": "Additionne 14 et 19 ensemble.",
+                            "completed": true
+                        },
+                        {
+                            "question": "Lisa avait 20 billes, elle en ach\u00e8te 15 de plus. Combien de billes a-t-elle maintenant ?",
+                            "answer": 35,
+                            "hint": "Ajoute 20 et 15.",
+                            "completed": true
+                        }
+                    ]
+                },
+                {
+                    "title": "La F\u00eate des Math\u00e9matiques",
+                    "concept": "Additionner des s\u00e9ries de trois nombres",
+                    "text": "Pr\u00e9pare une f\u00eate en ajoutant des d\u00e9corations, des g\u00e2teaux, et des boissons.",
+                    "image": "1_6.png",
+                    "completed": true,
+                    "questions": [
+                        {
+                            "question": "Il y a 7 ballons, 8 g\u00e2teaux et 5 boissons. Combien d'objets y a-t-il en tout ?",
+                            "answer": 20,
+                            "hint": "Additionne 7 et 8 puis rajoute 5",
+                            "completed": true
+                        },
+                        {
+                            "question": "Nous avons 9 chaises, 6 tables et 4 nappes. Combien d'objets avons-nous ?",
+                            "answer": 19,
+                            "hint": "Additionne 9 et 6 puis rajoute 4.",
+                            "completed": true
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "title": "Construction du Radeau",
-          "concept": "Addition de nombres à deux chiffres sans retenue",
-          "text": "Aide à construire un radeau en ajoutant des morceaux de bois.",
-          "image":"1_2.png",            
-          "questions": [
-            {
-              "question": "Il y a 12 morceaux de bois et on en ajoute 15. Combien de morceaux de bois y a-t-il maintenant ?",
-              "answer": 27,
-              "hint": "Ajoute d'abord les unités puis les dizaines."
-            },
-            {
-              "question": "Il y a 23 planches et on en ajoute 14. Combien de planches avons-nous ?",
-              "answer": 37,
-              "hint": "Additionne les unités (3 + 4) puis les dizaines (2 + 1)."
-            }
-          ]
+            "name": "L'\u00cele des Myst\u00e8res",
+            "theme": "Soustraction",
+            "completed": false,
+            "progress": 0,
+            "levels": [
+                {
+                    "title": "Les Noix de l'\u00c9cureuil",
+                    "concept": "Soustraction de nombres \u00e0 un chiffre",
+                    "text": "Aide l'\u00e9cureuil \u00e0 ramasser des noix.",
+                    "image": "2_1.png",
+                    "completed": false,
+                    "questions": [
+                        {
+                            "question": "L'\u00e9cureuil a 9 noix, il en mange 4. Combien de noix lui reste-t-il ?",
+                            "answer": 5,
+                            "hint": "Soustrais 4 de 9.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y avait 7 noix, l'\u00e9cureuil en cache 3. Combien reste-t-il de noix visibles ?",
+                            "answer": 4,
+                            "hint": "Soustrais 3 de 7.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Le Chemin du Cerf",
+                    "concept": "Soustraction de nombres \u00e0 deux chiffres sans emprunt",
+                    "text": "Guide le cerf \u00e0 travers la for\u00eat en comptant les pas restants.",
+                    "image": "2_2.png",
+                    "completed": false,
+                    "questions": [
+                        {
+                            "question": "Le cerf doit faire 23 pas pour arriver \u00e0 destination, il a d\u00e9j\u00e0 avanc\u00e9 de 12 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
+                            "answer": 11,
+                            "hint": "Soustrais 12 de 23.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il a doit parcourir 30 pas, mais il a d\u00e9j\u00e0 fait 10 pas. Combien de pas lui reste-t-il \u00e0 faire ?",
+                            "answer": 20,
+                            "hint": "Soustrais 10 de 30.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Pommes de l'Ours",
+                    "concept": "Soustraction d'objets visuels",
+                    "text": "Aide l'ours \u00e0 cueillir des pommes pour l'hiver.",
+                    "image": "2_3.png",
+                    "completed": false,
+                    "questions": [
+                        {
+                            "question": "L'ours a 10 pommes, il en mange 3. Combien de pommes lui reste-t-il ?",
+                            "answer": 7,
+                            "hint": "Soustrais 3 de 10.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y avait 15 pommes, l'ours en donne 5 \u00e0 ses amis. Combien de pommes lui reste-t-il ?",
+                            "answer": 10,
+                            "hint": "Soustrais 5 de 15.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Pierres Pr\u00e9cieuses",
+                    "concept": "Soustraction de nombres \u00e0 deux chiffres avec emprunt",
+                    "text": "R\u00e9cup\u00e8re des tr\u00e9sors cach\u00e9s en soustrayant des pierres pr\u00e9cieuses.",
+                    "completed": false,
+                    "image": "2_4.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 54 pierres pr\u00e9cieuses, on en prend 27. Combien reste-t-il de pierres ?",
+                            "answer": 27,
+                            "hint": "Soustrais 27 de 54.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Nous avons 72 pierres pr\u00e9cieuses et en perdons 35. Combien de pierres avons-nous maintenant ?",
+                            "answer": 37,
+                            "hint": "Soustrais 35 de 72.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Bonbons de Pierre",
+                    "concept": "Probl\u00e8mes simples de mots",
+                    "text": "Aide Pierre \u00e0 partager ses bonbons.",
+                    "completed": false,
+                    "image": "2_5.png",
+                    "questions": [
+                        {
+                            "question": "Pierre avait 20 bonbons, il en mange 7. Combien lui en reste-t-il ?",
+                            "answer": 13,
+                            "hint": "Soustrais 7 de 20.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Pierre avait 30 bonbons, il en donne 12 \u00e0 ses amis. Combien de bonbons lui reste-t-il ?",
+                            "answer": 18,
+                            "hint": "Soustrais 12 de 30.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Le Chemin Secret",
+                    "concept": "Soustraction avec des s\u00e9ries de trois nombres",
+                    "text": "Trouve un chemin secret en soustrayant des \u00e9l\u00e9ments sur une carte.",
+                    "completed": false,
+                    "image": "2_6.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 20 pierres, on en enl\u00e8ve 5 puis 3. Combien reste-t-il de pierres ?",
+                            "answer": 12,
+                            "hint": "Soustrais 5 de 20, puis soustrais 3.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y avait 30 feuilles, on en enl\u00e8ve 10 puis 5. Combien de feuilles restent-elles ?",
+                            "answer": 15,
+                            "hint": "Soustrais 10 de 30, puis soustrais 5.",
+                            "completed": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "title": "Le Pique-Nique des Fruits",
-          "concept": "Addition d'objets visuels",
-          "text": "Ramasse des fruits pour un pique-nique.",
-          "image":"1_3.png",  
-          "questions": [
-            {
-              "question": "Il y a 5 pommes sur l'arbre et 6 pommes au sol. Combien de pommes y a-t-il en tout ?",
-              "answer": 11,
-              "hint": "Compte toutes les pommes ensemble."
-            },
-            {
-              "question": "Nous avons 8 oranges et 7 mandarines. Combien de fruits avons-nous ?",
-              "answer": 15,
-              "hint": "Ajoute le nombre d'oranges au nombre de mandarines."
-            }
-          ]
+            "name": "L'\u00cele des Pyramides",
+            "theme": "Multiplication",
+            "completed": false,
+            "progress": 0,
+            "levels": [
+                {
+                    "title": "Les Papyrus du Scorpion",
+                    "concept": "Multiplication avec des nombres \u00e0 un chiffre",
+                    "text": "Aide le scorpion \u00e0 trouver des morceaux de papyrus.",
+                    "completed": false,
+                    "image": "3_1.png",
+                    "questions": [
+                        {
+                            "question": "Le scorpion trouve 4 morceaux de papyrus, il en trouve 3 fois plus. Combien de morceaux de papyrus a-t-il en tout ?",
+                            "answer": 12,
+                            "hint": "Multiplie 4 par 3.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 6 papyrus, le scorpion en trouve 2 fois plus. Combien de papyrus a-t-il maintenant ?",
+                            "answer": 12,
+                            "hint": "Multiplie 6 par 2.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Portes du Temple",
+                    "concept": "Table de multiplication de 2, 3, 4 et 5",
+                    "text": "R\u00e9sous des \u00e9nigmes dans un temple pour ouvrir des portes.",
+                    "completed": false,
+                    "image": "3_2.png",
+                    "questions": [
+                        {
+                            "question": "R\u00e9sous : 3 x 4 = ?",
+                            "answer": 12,
+                            "hint": "Utilise la table de multiplication pour 3.",
+                            "completed": false
+                        },
+                        {
+                            "question": "R\u00e9sous : 5 x 2 = ?",
+                            "answer": 10,
+                            "hint": "Utilise la table de multiplication pour 5.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Perles des Coquillages",
+                    "concept": "Multiplication visuelle (groupes d'objets)",
+                    "text": "Trouve des perles en comptant les groupes de coquillages.",
+                    "completed": false,
+                    "image": "3_3.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 3 groupes de 4 coquillages. Combien de coquillages y a-t-il en tout ?",
+                            "answer": 12,
+                            "hint": "Multiplie 3 par 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Nous avons 5 groupes de 2 perles. Combien de perles avons-nous ?",
+                            "answer": 10,
+                            "hint": "Multiplie 5 par 2.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Statues du Temple",
+                    "concept": "Multiplication avec des nombres \u00e0 deux chiffres",
+                    "text": "Construis des statues en multipliant des blocs de pierre.",
+                    "completed": false,
+                    "image": "3_4.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 12 blocs de pierre, on les multiplie par 3. Combien de blocs avons-nous en tout ?",
+                            "answer": 36,
+                            "hint": "Multiplie 12 par 3.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Nous avons 15 blocs de pierre, on les multiplie par 4. Combien de blocs avons-nous maintenant ?",
+                            "answer": 60,
+                            "hint": "Multiplie 15 par 4.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "La Caravane des Marchandises",
+                    "concept": "Probl\u00e8mes simples de mots",
+                    "text": "Aide une caravane \u00e0 transporter des marchandises.",
+                    "completed": false,
+                    "image": "3_5.png",
+                    "questions": [
+                        {
+                            "question": "Marie a 5 sacs avec 4 pommes chacun. Combien de pommes a-t-elle en tout ?",
+                            "answer": 20,
+                            "hint": "Multiplie 5 par 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 6 chameaux portant chacun 3 sacs. Combien de sacs y a-t-il en tout ?",
+                            "answer": 18,
+                            "hint": "Multiplie 6 par 3.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Hi\u00e9roglyphes Secrets",
+                    "concept": "Multiplication par 10 et 100",
+                    "text": "Utilise des hi\u00e9roglyphes pour d\u00e9chiffrer des messages secrets.",
+                    "completed": false,
+                    "image": "3_6.png",
+                    "questions": [
+                        {
+                            "question": "Multiplie 10 par 4. Combien cela fait-il ?",
+                            "answer": 40,
+                            "hint": "Multiplie 10 par 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Multiplie 100 par 2. Combien cela fait-il ?",
+                            "answer": 200,
+                            "hint": "Multiplie 100 par 2.",
+                            "completed": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "title": "Les Sacs de Trésor",
-          "concept": "Addition de nombres à deux chiffres avec retenue",
-          "text": "Aide à remplir des sacs de trésor en ajoutant des pièces d'or.",
-          "image":"1_4.png",
-          "questions": [
-            {
-              "question": "Il y a 27 pièces d'or dans un sac et on ajoute 38 pièces. Combien y a-t-il de pièces en tout ?",
-              "answer": 65,
-              "hint": "Ajoute d'abord les unités (7 + 8) puis les dizaines (2 + 3) et n'oublie pas la retenue."
-            },
-            {
-              "question": "Nous avons 45 pièces d'or et ajoutons 29 pièces. Combien de pièces avons-nous ?",
-              "answer": 74,
-              "hint": "Additionne les unités (5 + 9) puis les dizaines (4 + 2) et n'oublie pas la retenue."
-            }
-          ]
-        },
-        {
-          "title": "Les Billes de Lisa",
-          "concept": "Problèmes simples de mots",
-          "text": "Aide Lisa à compter ses billes.",
-          "image":"1_5.png",
-          "questions": [
-            {
-              "question": "Lisa a 14 billes, elle en gagne 19 de plus. Combien en a-t-elle maintenant ?",
-              "answer": 33,
-              "hint": "Additionne 14 et 19 ensemble."
-            },
-            {
-              "question": "Lisa avait 20 billes, elle en achète 15 de plus. Combien de billes a-t-elle maintenant ?",
-              "answer": 35,
-              "hint": "Ajoute 20 et 15."
-            }
-          ]
-        },
-        {
-          "title": "La Fête des Mathématiques",
-          "concept": "Additionner des séries de trois nombres",
-          "text": "Prépare une fête en ajoutant des décorations, des gâteaux, et des boissons.",
-          "image":"1_6.png",
-          "questions": [
-            {
-              "question": "Il y a 7 ballons, 8 gâteaux et 5 boissons. Combien d'objets y a-t-il en tout ?",
-              "answer": 20,
-              "hint": "Additionne 7 et 8 puis rajoute 5"
-            },
-            {
-              "question": "Nous avons 9 chaises, 6 tables et 4 nappes. Combien d'objets avons-nous ?",
-              "answer": 19,
-              "hint": "Additionne 9 et 6 puis rajoute 4."
-            }
-          ]
+            "name": "L'\u00cele des Archipels",
+            "theme": "Division",
+            "completed": false,
+            "progress": 0,
+            "levels": [
+                {
+                    "title": "Les Poissons du Dauphin",
+                    "concept": "Division avec des nombres \u00e0 un chiffre",
+                    "text": "Aide le dauphin \u00e0 partager des poissons avec ses amis.",
+                    "completed": false,
+                    "image": "4_1.png",
+                    "questions": [
+                        {
+                            "question": "Le dauphin a 12 poissons, il les partage entre 3 amis. Combien de poissons chaque ami re\u00e7oit-il ?",
+                            "answer": 4,
+                            "hint": "Divise 12 par 3.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 15 poissons et 5 amis. Combien de poissons chaque ami re\u00e7oit-il ?",
+                            "answer": 3,
+                            "hint": "Divise 15 par 5.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Coquillages Partag\u00e9s",
+                    "concept": "Division simple avec partage d'objets visuels",
+                    "text": "Distribue des coquillages aux enfants.",
+                    "completed": false,
+                    "image": "4_2.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 20 coquillages, on les partage entre 4 enfants. Combien de coquillages chaque enfant re\u00e7oit-il ?",
+                            "answer": 5,
+                            "hint": "Divise 20 par 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 25 coquillages et 4 enfants. Combien de coquillages chaque enfant re\u00e7oit-il ?",
+                            "answer": 6,
+                            "hint": "Divise 25 par 5.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Voiles du Bateau",
+                    "concept": "Utilisation des tables de multiplication pour le division",
+                    "text": "Utilise les \u00e9toiles pour guider le voiles du bateau",
+                    "completed": false,
+                    "image": "4_3.png",
+                    "questions": [
+                        {
+                            "question": "Dans le ciel les \u00e9toiles marquent : 12 \u00f7 4 = ? , la direction est vers quel nombre ?",
+                            "answer": 3,
+                            "hint": "Utilise la table de multiplication de 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Dans le ciel les \u00e9toiles marquent : 15 \u00f7 3 = ? , la direction est vers quel nombre ?",
+                            "answer": 5,
+                            "hint": "Utilise la table de multiplication pour 3.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "La P\u00eache des Restes",
+                    "concept": "Division avec des restes",
+                    "text": "P\u00eache des poissons et partage-les en parts \u00e9gales, avec des restes.",
+                    "completed": false,
+                    "image": "4_4.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 14 poissons, on les partage entre 3 amis. Combien de poissons reste-t-il ?",
+                            "answer": 2,
+                            "hint": "Divise 14 par 3, puis calcule le reste.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 17 coquillages, on les partage entre 4 amis. Combien de coquillages reste-t-il ?",
+                            "answer": 1,
+                            "hint": "Divise 17 par 4, puis calcule le reste.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Courses de Bateau",
+                    "concept": "Probl\u00e8mes simples de mots",
+                    "text": "Organise des courses de bateau en formant des \u00e9quipes \u00e9gales.",
+                    "completed": false,
+                    "image": "4_5.png",
+                    "questions": [
+                        {
+                            "question": "Il y a 20 \u00e9l\u00e8ves et 4 \u00e9quipes. Combien d'\u00e9l\u00e8ves par \u00e9quipe ?",
+                            "answer": 5,
+                            "hint": "Divise 20 par 4.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Il y a 18 marins et 3 bateaux. Combien de marins par bateau ?",
+                            "answer": 6,
+                            "hint": "Divise 18 par 3.",
+                            "completed": false
+                        }
+                    ]
+                },
+                {
+                    "title": "Les Tr\u00e9sors \u00c9chang\u00e9s",
+                    "concept": "Division par 10 et 100",
+                    "text": "Utilise des tr\u00e9sors trouv\u00e9s pour \u00e9changer des ressources entre les \u00eeles.",
+                    "completed": false,
+                    "image": "4_6.png",
+                    "questions": [
+                        {
+                            "question": "Un coffre contient 200 pi\u00e8ces d'or. Si on les divise en 10 parts \u00e9gales, combien de pi\u00e8ces y a-t-il dans chaque part ?",
+                            "answer": 20,
+                            "hint": "Divise 200 par 10.",
+                            "completed": false
+                        },
+                        {
+                            "question": "Un tr\u00e9sor compte 1000 rubis. Si on les r\u00e9partit \u00e9galement entre 100 coffres, combien de rubis y a-t-il dans chaque coffre ?",
+                            "answer": 10,
+                            "hint": "Divise 1000 par 100.",
+                            "completed": false
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-
-    {
-      "name": "L'Île des Mystères",
-      "theme": "Soustraction",
-      "levels": [
-        {
-          "title": "Les Noix de l'Écureuil",
-          "concept": "Soustraction de nombres à un chiffre",
-          "text": "Aide l'écureuil à ramasser des noix.",
-          "image":"2_1.png",
-          "questions": [
-            {
-              "question": "L'écureuil a 9 noix, il en mange 4. Combien de noix lui reste-t-il ?",
-              "answer": 5,
-              "hint": "Soustrais 4 de 9."
-            },
-            {
-              "question": "Il y avait 7 noix, l'écureuil en cache 3. Combien reste-t-il de noix visibles ?",
-              "answer": 4,
-              "hint": "Soustrais 3 de 7."
-            }
-          ]
-        },
-        {
-          "title": "Le Chemin du Cerf",
-          "concept": "Soustraction de nombres à deux chiffres sans emprunt",
-          "text": "Guide le cerf à travers la forêt en comptant les pas restants.",
-          "image":"2_2.png",
-          "questions": [
-            {
-              "question": "Le cerf doit faire 23 pas pour arriver à destination , il a déjà avancé de 12 pas. Combien de pas lui reste-t-il à faire ?",
-              "answer": 11,
-              "hint": "Soustrais 12 de 23."
-            },
-            {
-              "question": "Il a doit parcourir 30 pas, mais il a déjà fait 10 pas. Combien de pas lui reste-t-il à faire ?",
-              "answer": 20,
-              "hint": "Soustrais 10 de 30."
-            }
-          ]
-        },
-        {
-          "title": "Les Pommes de l'Ours",
-          "concept": "Soustraction d'objets visuels",
-          "text": "Aide l'ours à cueillir des pommes pour l'hiver.",
-          "image":"2_3.png",
-          "questions": [
-            {
-              "question": "L'ours a 10 pommes, il en mange 3. Combien de pommes lui reste-t-il ?",
-              "answer": 7,
-              "hint": "Soustrais 3 de 10."
-            },
-            {
-              "question": "Il y avait 15 pommes, l'ours en donne 5 à ses amis. Combien de pommes lui reste-t-il ?",
-              "answer": 10,
-              "hint": "Soustrais 5 de 15."
-            }
-          ]
-        },
-        {
-          "title": "Les Pierres Précieuses",
-          "concept": "Soustraction de nombres à deux chiffres avec emprunt",
-          "text": "Récupère des trésors cachés en soustrayant des pierres précieuses.",
-          "image":"2_4.png",
-          "questions": [
-            {
-              "question": "Il y a 54 pierres précieuses, on en prend 27. Combien reste-t-il de pierres ?",
-              "answer": 27,
-              "hint": "Soustrais 27 de 54."
-            },
-            {
-              "question": "Nous avons 72 pierres précieuses et en perdons 35. Combien de pierres avons-nous maintenant ?",
-              "answer": 37,
-              "hint": "Soustrais 35 de 72."
-            }
-          ]
-        },
-        {
-          "title": "Les Bonbons de Pierre",
-          "concept": "Problèmes simples de mots",
-          "text": "Aide Pierre à partager ses bonbons.",
-          "image":"2_5.png",
-          "questions": [
-            {
-              "question": "Pierre avait 20 bonbons, il en mange 7. Combien lui en reste-t-il ?",
-              "answer": 13,
-              "hint": "Soustrais 7 de 20."
-            },
-            {
-              "question": "Pierre avait 30 bonbons, il en donne 12 à ses amis. Combien de bonbons lui reste-t-il ?",
-              "answer": 18,
-              "hint": "Soustrais 12 de 30."
-            }
-          ]
-        },
-        {
-          "title": "Le Chemin Secret",
-          "concept": "Soustraction avec des séries de trois nombres",
-          "text": "Trouve un chemin secret en soustrayant des éléments sur une carte.",
-          "image":"2_6.png",
-          "questions": [
-            {
-              "question": "Il y a 20 pierres, on en enlève 5 puis 3. Combien reste-t-il de pierres ?",
-              "answer": 12,
-              "hint": "Soustrais 5 de 20, puis soustrais 3."
-            },
-            {
-              "question": "Il y avait 30 feuilles, on en enlève 10 puis 5. Combien de feuilles restent-elles ?",
-              "answer": 15,
-              "hint": "Soustrais 10 de 30, puis soustrais 5."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "L'Île des Pyramides",
-      "theme": "Multiplication",
-      "levels": [
-        {
-          "title": "Les Papyrus du Scorpion",
-          "concept": "Multiplication avec des nombres à un chiffre",
-          "text": "Aide le scorpion à trouver des morceaux de papyrus.",
-          "image":"3_1.png",
-          "questions": [
-            {
-              "question": "Le scorpion trouve 4 morceaux de papyrus, il en trouve 3 fois plus. Combien de morceaux de papyrus a-t-il en tout ?",
-              "answer": 12,
-              "hint": "Multiplie 4 par 3."
-            },
-            {
-              "question": "Il y a 6 papyrus, le scorpion en trouve 2 fois plus. Combien de papyrus a-t-il maintenant ?",
-              "answer": 12,
-              "hint": "Multiplie 6 par 2."
-            }
-          ]
-        },
-        {
-          "title": "Les Portes du Temple",
-          "concept": "Table de multiplication de 2, 3, 4 et 5",
-          "text": "Résous des énigmes dans un temple pour ouvrir des portes.",
-          "image":"3_2.png",
-          "questions": [
-            {
-              "question": "Résous : 3 x 4 = ?",
-              "answer": 12,
-              "hint": "Utilise la table de multiplication pour 3."
-            },
-            {
-              "question": "Résous : 5 x 2 = ?",
-              "answer": 10,
-              "hint": "Utilise la table de multiplication pour 5."
-            }
-          ]
-        },
-        {
-          "title": "Les Perles des Coquillages",
-          "concept": "Multiplication visuelle (groupes d'objets)",
-          "text": "Trouve des perles en comptant les groupes de coquillages.",
-          "image":"3_3.png",
-          "questions": [
-            {
-              "question": "Il y a 3 groupes de 4 coquillages. Combien de coquillages y a-t-il en tout ?",
-              "answer": 12,
-              "hint": "Multiplie 3 par 4."
-            },
-            {
-              "question": "Nous avons 5 groupes de 2 perles. Combien de perles avons-nous ?",
-              "answer": 10,
-              "hint": "Multiplie 5 par 2."
-            }
-          ]
-        },
-        {
-          "title": "Les Statues du Temple",
-          "concept": "Multiplication avec des nombres à deux chiffres",
-          "text": "Construis des statues en multipliant des blocs de pierre.",
-          "image":"3_4.png",
-          "questions": [
-            {
-              "question": "Il y a 12 blocs de pierre, on les multiplie par 3. Combien de blocs avons-nous en tout ?",
-              "answer": 36,
-              "hint": "Multiplie 12 par 3."
-            },
-            {
-              "question": "Nous avons 15 blocs de pierre, on les multiplie par 4. Combien de blocs avons-nous maintenant ?",
-              "answer": 60,
-              "hint": "Multiplie 15 par 4."
-            }
-          ]
-        },
-        {
-          "title": "La Caravane des Marchandises",
-          "concept": "Problèmes simples de mots",
-          "text": "Aide une caravane à transporter des marchandises.",
-          "image":"3_5.png",
-          "questions": [
-            {
-              "question": "Marie a 5 sacs avec 4 pommes chacun. Combien de pommes a-t-elle en tout ?",
-              "answer": 20,
-              "hint": "Multiplie 5 par 4."
-            },
-            {
-              "question": "Il y a 6 chameaux portant chacun 3 sacs. Combien de sacs y a-t-il en tout ?",
-              "answer": 18,
-              "hint": "Multiplie 6 par 3."
-            }
-          ]
-        },
-        {
-          "title": "Les Hiéroglyphes Secrets",
-          "concept": "Multiplication par 10 et 100",
-          "text": "Utilise des hiéroglyphes pour déchiffrer des messages secrets.",
-          "image":"3_6.png",
-          "questions": [
-            {
-              "question": "Multiplie 10 par 4. Combien cela fait-il ?",
-              "answer": 40,
-              "hint": "Multiplie 10 par 4."
-            },
-            {
-              "question": "Multiplie 100 par 2. Combien cela fait-il ?",
-              "answer": 200,
-              "hint": "Multiplie 100 par 2."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "L'Île des Archipels",
-      "theme": "Division",
-      "levels": [
-        {
-          "title": "Les Poissons du Dauphin",
-          "concept": "Division avec des nombres à un chiffre",
-          "text": "Aide le dauphin à partager des poissons avec ses amis.",
-          "image":"4_1.png",
-          "questions": [
-            {
-              "question": "Le dauphin a 12 poissons, il les partage entre 3 amis. Combien de poissons chaque ami reçoit-il ?",
-              "answer": 4,
-              "hint": "Divise 12 par 3."
-            },
-            {
-              "question": "Il y a 15 poissons et 5 amis. Combien de poissons chaque ami reçoit-il ?",
-              "answer": 3,
-              "hint": "Divise 15 par 5."
-            }
-          ]
-        },
-        {
-          "title": "Les Coquillages Partagés",
-          "concept": "Division simple avec partage d'objets visuels",
-          "text": "Distribue des coquillages aux enfants.",
-          "image":"4_2.png",
-          "questions": [
-            {
-              "question": "Il y a 20 coquillages, on les partage entre 4 enfants. Combien de coquillages chaque enfant reçoit-il ?",
-              "answer": 5,
-              "hint": "Divise 20 par 4."
-            },
-            {
-              "question": "Il y a 25 coquillages et 4 enfants. Combien de coquillages chaque enfant reçoit-il ?",
-              "answer": 6,
-              "hint": "Divise 25 par 5."
-            }
-          ]
-        },
-        {
-          "title": "Les Voiles du Bateau",
-          "concept": "Utilisation des tables de multiplication pour le division",
-          "text": "Utilise les étoiles pour guider le voiles du bateau",
-          "image":"4_3.png",
-          "questions": [
-            {
-              "question": "Dans le ciel les etoiles marque : 12 ÷ 4 = ? , la direction est vers quel nombre ?",
-              "answer": 3,
-              "hint": "Utilise la table de mulltiplication de 4 ."
-            },
-            {
-              "question": "Dans le ciel les etoiles marque : 15 ÷ 3 = ? , la direction est vers quel nombre ?",
-              "answer": 5,
-              "hint": "Utilise la table de multiplication pour 3."
-            }
-          ]
-        },
-        {
-          "title": "La Pêche des Restes",
-          "concept": "Division avec des restes",
-          "text": "Pêche des poissons et partage-les en parts égales, avec des restes.",
-          "image":"4_4.png",
-          "questions": [
-            {
-              "question": "Il y a 14 poissons, on les partage entre 3 amis. Combien de poissons reste-t-il ?",
-              "answer": 2,
-              "hint": "Divise 14 par 3, puis calcule le reste."
-            },
-            {
-              "question": "Il y a 17 coquillages, on les partage entre 4 amis. Combien de coquillages reste-t-il ?",
-              "answer": 1,
-              "hint": "Divise 17 par 4, puis calcule le reste."
-            }
-          ]
-        },
-        {
-          "title": "Les Courses de Bateau",
-          "concept": "Problèmes simples de mots",
-          "text": "Organise des courses de bateau en formant des équipes égales.",
-          "image":"4_5.png",
-          "questions": [
-            {
-              "question": "Il y a 20 élèves et 4 équipes. Combien d'élèves par équipe ?",
-              "answer": 5,
-              "hint": "Divise 20 par 4."
-            },
-            {
-              "question": "Il y a 18 marins et 3 bateaux. Combien de marins par bateau ?",
-              "answer": 6,
-              "hint": "Divise 18 par 3."
-            }
-          ]
-        },
-        {
-          "title": "Les Trésors Échangés",
-          "concept": "Division par 10 et 100",
-          "text": "Utilise des trésors trouvés pour échanger des ressources entre les îles.",
-          "image":"4_6.png",
-          "questions": [
-            {
-              "question": "Un coffre contient 200 pièces d'or. Si on les divise en 10 parts égales, combien de pièces y a-t-il dans chaque part ?",
-              "answer": 20,
-              "hint": "Divise 200 par 10."
-            },
-            {
-              "question": "Un trésor compte 1000 rubis. Si on les répartit également entre 100 coffres, combien de rubis y a-t-il dans chaque coffre ?",
-              "answer": 10,
-              "hint": "Divise 1000 par 100."
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

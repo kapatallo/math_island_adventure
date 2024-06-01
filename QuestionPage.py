@@ -1,8 +1,11 @@
 import os
 import pygame
+import json
 
 class QuestionPage:
-    def __init__(self, screen, background_image, title, text, questions, level_image, return_callback):
+   
+            
+    def __init__(self, screen, background_image, title, text, questions, level_image, return_callback,operation):
         self.screen = screen
         self.background_image_path = background_image
         self.title = title
@@ -12,16 +15,17 @@ class QuestionPage:
         self.return_callback = return_callback  
         self.back_button = None
         self.back_button_rect = None
-
         self.current_question = 0
         self.user_input = ""
         self.input_active = False
         self.input_color_inactive = pygame.Color('lightskyblue3')
         self.input_color_active = pygame.Color('dodgerblue2')
         self.input_color = self.input_color_inactive
-
+        self.operation=operation
         self.avatar_state = "normal"
         self.avatar_timer = 0
+        with open('question.json', 'r', encoding='utf-8') as file:
+            self.archipelago_data = json.load(file)
 
         self.message = ""
         self.message_color = pygame.Color('black')
@@ -33,7 +37,33 @@ class QuestionPage:
         self.load_font()
         self.create_input_box()
         self.create_buttons()
-
+    def update_archipel(self):
+        # Mettre à jour l'état du niveau actuel dans l'archipel lorsque la réponse est correcte
+        for island in self.archipelago_data['islands']:
+            
+            if island["theme"]==self.operation:
+                test1=True
+                for level in island['levels']:
+                    if level['title']==self.title:
+                        level['questions'][self.current_question]['completed'] = True
+                    test=True
+                    for question in level['questions']:
+                        if question['completed']==False:
+                            test=False
+                    level['completed']=test
+                    if level['completed']==False:
+                        test1=False
+                island['completed']=test1
+            
+            
+                    
+                        
+        with open('question.json', 'w', encoding='utf-8') as file:
+            json.dump(self.archipelago_data, file, indent=4)
+                
+                    
+                        
+                        
     def load_images(self):
         self.background = pygame.image.load(self.background_image_path)
         self.avatar_qst = pygame.image.load('avatar_qst.png')
@@ -194,6 +224,7 @@ class QuestionPage:
                         self.message = "Bravo ! C'est la bonne réponse."
                         self.user_input = ""  # Clear the input
                         self.correct_answer_given = True
+                        self.update_archipel()
                         self.avatar_timer = pygame.time.get_ticks()
                     else:
                         self.input_color = pygame.Color('red')

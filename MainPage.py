@@ -1,8 +1,12 @@
 import os
 import pygame
+import json
 
 class MainPage:
     def __init__(self, screen, screen_width, screen_height):
+        # Autres initialisations
+        self.load_json_data()  # Charger les données JSON
+        self.question_progress = {}  # Dictionnaire pour stocker la progression des questions
         self.screen = screen
         self.screen_width = screen_width
         self.screen_height = screen_height
@@ -12,6 +16,30 @@ class MainPage:
         self.avatar_target = None
         self.current_archipelago = None
         self.show_welcome_message = True
+
+    def load_json_data(self):
+        # Charger les données du fichier JSON
+        with open('question.json', 'r', encoding='utf-8') as file:
+            self.archipelago_data = json.load(file)
+
+    def set_question_progression(self, level_title, is_completed):
+        # Définir la progression d'une question spécifique
+        self.question_progress[level_title] = is_completed
+
+    def get_question_progression(self, level_title):
+        # Obtenir la progression d'une question spécifique
+        return self.question_progress.get(level_title, False)
+
+    def is_archipelago_completed(self, theme):
+        for island in self.archipelago_data["islands"]:
+            if island["theme"] == theme:
+                for level in island["levels"]:
+                    if not level["completed"]:
+                        return False
+        return True
+        
+        
+    
 
     def load_images(self):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +53,10 @@ class MainPage:
         self.avatar_moving = pygame.image.load('avatar_moving.png')
         self.logo = pygame.image.load('logo.png')
         self.welcome_message = pygame.image.load('msg_welcome.png')
+        self.add_trophy=pygame.image.load('add_trophy.png')
+        self.mul_trophy=pygame.image.load('mul_trophy.png')
+        self.div_trophy=pygame.image.load('div_trophy.png')
+        self.sous_trophy=pygame.image.load('sous_trophy.png')
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
@@ -36,6 +68,10 @@ class MainPage:
         self.avatar_moving = self.scale_image(self.avatar_moving, 100, 100)
         self.logo = self.scale_image(self.logo, 250, 250)
         self.welcome_message = self.scale_image(self.welcome_message, 600, 150)
+        self.add_trophy=self.scale_image(self.add_trophy,50,50)
+        self.sous_trophy=self.scale_image(self.sous_trophy,50,50)
+        self.mul_trophy=self.scale_image(self.mul_trophy,50,50)
+        self.div_trophy=self.scale_image(self.div_trophy,50,50)
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -56,6 +92,11 @@ class MainPage:
         self.logo_pos = (380, 3)
         self.avatar_pos = [(self.screen_width // 2 - self.avatar.get_width() // 2)-20, self.screen_height // 2 - self.avatar.get_height() // 2]
         self.welcome_message_pos = (450,100)
+        self.add_trophy_pos = (40,20)
+        self.sous_trophy_pos = (80,20)
+        self.mul_trophy_pos = (120,20)
+        self.div_trophy_pos = (160,20)
+        
 
     def draw_screen(self):
         self.screen.blit(self.background, (0, 0))
@@ -65,6 +106,14 @@ class MainPage:
         self.screen.blit(self.division_island, self.division_pos)
         self.screen.blit(self.avatar, self.avatar_pos)
         self.screen.blit(self.logo, self.logo_pos)
+        if self.is_archipelago_completed("Addition"):
+            self.screen.blit(self.add_trophy, self.add_trophy_pos)
+        if self.is_archipelago_completed("Soustraction"):
+            self.screen.blit(self.sous_trophy, self.sous_trophy_pos)
+        if self.is_archipelago_completed("Multiplication"):
+            self.screen.blit(self.mul_trophy, self.mul_trophy_pos)
+        if self.is_archipelago_completed("Division"):
+            self.screen.blit(self.div_trophy, self.div_trophy_pos)
 
         if self.show_welcome_message:
             self.screen.blit(self.welcome_message, self.welcome_message_pos)

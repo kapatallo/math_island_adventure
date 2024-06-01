@@ -3,7 +3,7 @@ from QuestionPage import QuestionPage
 from CoursePage import CoursePage
 
 class ArchipelagoPage:
-    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images, return_callback):
+    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images, return_callback,operation):
         self.screen = screen
         self.main_island_image = main_island_image
         self.avatar_image = avatar_image
@@ -16,6 +16,7 @@ class ArchipelagoPage:
         self.questions = questions
         self.course_images = course_images
         self.return_callback = return_callback
+        self.operation= operation
 
         self.back_button = None
         self.back_button_rect = None
@@ -125,7 +126,7 @@ class ArchipelagoPage:
                             text = self.questions[i]['text']
                             questions = self.questions[i]['questions']
                             image_qst = self.questions[i]['image']
-                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago)
+                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago, self.operation)
                             break
 
             if event.type == pygame.MOUSEMOTION:
