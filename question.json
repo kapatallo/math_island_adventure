@@ -137,7 +137,7 @@
         {
             "name": "L'\u00cele des Myst\u00e8res",
             "theme": "Soustraction",
-            "completed": false,
+            "completed": true,
             "progress": 0,
             "levels": [
                 {
@@ -145,19 +145,19 @@
                     "concept": "Soustraction de nombres \u00e0 un chiffre",
                     "text": "Aide l'\u00e9cureuil \u00e0 ramasser des noix.",
                     "image": "2_1.png",
-                    "completed": false,
+                    "completed": true,
                     "questions": [
                         {
                             "question": "L'\u00e9cureuil a 9 noix, il en mange 4. Combien de noix lui reste-t-il ?",
                             "answer": 5,
                             "hint": "Enleve 4 de 9.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y avait 7 noix, l'\u00e9cureuil en cache 3. Combien reste-t-il de noix visibles ?",
                             "answer": 4,
                             "hint": "Enleve 3 de 7.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -166,19 +166,19 @@
                     "concept": "Soustraction d'objets visuels",
                     "text": "Aide l'ours \u00e0 cueillir des pommes pour l'hiver.",
                     "image": "2_3.png",
-                    "completed": false,
+                    "completed": true,
                     "questions": [
                         {
                             "question": "L'ours a 10 pommes, il en mange 3. Combien de pommes lui reste-t-il ?",
                             "answer": 7,
                             "hint": "Soustrais 3 de 10.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y avait 15 pommes, l'ours en donne 5 \u00e0 ses amis. Combien de pommes lui reste-t-il ?",
                             "answer": 10,
                             "hint": "Soustrais 5 de 15.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -186,20 +186,20 @@
                     "title": "Les Bonbons de Pierre",
                     "concept": "Probl\u00e8mes simples de mots",
                     "text": "Aide Pierre \u00e0 partager ses bonbons.",
-                    "completed": false,
+                    "completed": true,
                     "image": "2_5.png",
                     "questions": [
                         {
                             "question": "Pierre avait 20 bonbons, il en mange 7. Combien lui en reste-t-il ?",
                             "answer": 13,
                             "hint": "Soustrais 7 de 20.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Pierre avait 30 bonbons, il en donne 3 \u00e0 ses amis. Combien de bonbons lui reste-t-il ?",
                             "answer": 27,
                             "hint": "Soustrais 3 de 30.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -228,20 +228,20 @@
                     "title": "Les Pierres Pr\u00e9cieuses",
                     "concept": "Soustraction de nombres \u00e0 deux chiffres avec emprunt",
                     "text": "R\u00e9cup\u00e8re des tr\u00e9sors cach\u00e9s en soustrayant des pierres pr\u00e9cieuses.",
-                    "completed": false,
+                    "completed": true,
                     "image": "2_4.png",
                     "questions": [
                         {
                             "question": "Il y a 54 pierres pr\u00e9cieuses, on en prend 27. Combien reste-t-il de pierres ?",
                             "answer": 27,
                             "hint": "27 - 54, les unit\u00e9s puis les dizaines,mais n'oublie pas l'emprunt...",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Nous avons 72 pierres pr\u00e9cieuses et en perdons 35. Combien de pierres avons-nous maintenant ?",
                             "answer": 37,
                             "hint": " 35 - 72, les unit\u00e9s puis les dizaines,mais n'oublie pas l'emprunt...",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -249,20 +249,20 @@
                     "title": "Le Chemin Secret",
                     "concept": "Soustraction avec des s\u00e9ries de trois nombres",
                     "text": "Trouve un chemin secret en soustrayant des \u00e9l\u00e9ments sur une carte.",
-                    "completed": false,
+                    "completed": true,
                     "image": "2_6.png",
                     "questions": [
                         {
                             "question": "Il y a 20 pierres, on en enl\u00e8ve 5 puis 3. Combien reste-t-il de pierres ?",
                             "answer": 12,
                             "hint": "Soustrais 5 de 20, puis soustrais 3.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y avait 30 feuilles, on en enl\u00e8ve 10 puis 5. Combien de feuilles restent-elles ?",
                             "answer": 15,
                             "hint": "Soustrais 10 de 30, puis soustrais 5.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 }
@@ -405,27 +405,27 @@
         {
             "name": "L'\u00cele des Archipels",
             "theme": "Division",
-            "completed": false,
+            "completed": true,
             "progress": 0,
             "levels": [
                 {
                     "title": "Les Poissons du Dauphin",
                     "concept": "Division avec des nombres \u00e0 un chiffre",
                     "text": "Aide le dauphin \u00e0 partager des poissons avec ses amis.",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_1.png",
                     "questions": [
                         {
                             "question": "Le dauphin a 12 poissons, il les partage entre 3 amis. Combien de poissons chaque ami re\u00e7oit-il ?",
                             "answer": 4,
                             "hint": "Divise 12 par 3.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y a 15 poissons et 5 amis. Combien de poissons chaque ami re\u00e7oit-il ?",
                             "answer": 3,
                             "hint": "Divise 15 par 5.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -433,20 +433,20 @@
                     "title": "Les Coquillages Partag\u00e9s",
                     "concept": "Division simple avec partage d'objets visuels",
                     "text": "Distribue des coquillages aux enfants.",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_2.png",
                     "questions": [
                         {
                             "question": "Il y a 20 coquillages, on les partage entre 4 enfants. Combien de coquillages chaque enfant re\u00e7oit-il ?",
                             "answer": 5,
                             "hint": "Divise 20 par 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y a 25 coquillages et 4 enfants. Combien de coquillages chaque enfant re\u00e7oit-il ?",
                             "answer": 6,
                             "hint": "Divise 25 par 5.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -454,20 +454,20 @@
                     "title": "Les Voiles du Bateau",
                     "concept": "Utilisation des tables de multiplication pour le division",
                     "text": "Utilise les \u00e9toiles pour guider le voiles du bateau",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_3.png",
                     "questions": [
                         {
                             "question": "Dans le ciel les \u00e9toiles marquent : 12 \u00f7 4 = ? , la direction est vers quel nombre ?",
                             "answer": 3,
                             "hint": "Utilise la table de multiplication de 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Dans le ciel les \u00e9toiles marquent : 15 \u00f7 3 = ? , la direction est vers quel nombre ?",
                             "answer": 5,
                             "hint": "Utilise la table de multiplication pour 3.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -475,20 +475,20 @@
                     "title": "La P\u00eache des Restes",
                     "concept": "Division avec des restes",
                     "text": "P\u00eache des poissons et partage-les en parts \u00e9gales, avec des restes.",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_4.png",
                     "questions": [
                         {
                             "question": "Il y a 14 poissons, on les partage entre 3 amis. Combien de poissons reste-t-il ?",
                             "answer": 2,
                             "hint": "Divise 14 par 3, puis calcule le reste.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y a 17 coquillages, on les partage entre 4 amis. Combien de coquillages reste-t-il ?",
                             "answer": 1,
                             "hint": "Divise 17 par 4, puis calcule le reste.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -496,20 +496,20 @@
                     "title": "Les Courses de Bateau",
                     "concept": "Probl\u00e8mes simples de mots",
                     "text": "Organise des courses de bateau en formant des \u00e9quipes \u00e9gales.",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_5.png",
                     "questions": [
                         {
                             "question": "Il y a 20 \u00e9l\u00e8ves et 4 \u00e9quipes. Combien d'\u00e9l\u00e8ves par \u00e9quipe ?",
                             "answer": 5,
                             "hint": "Divise 20 par 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y a 18 marins et 3 bateaux. Combien de marins par bateau ?",
                             "answer": 6,
                             "hint": "Divise 18 par 3.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -517,20 +517,20 @@
                     "title": "Les Tr\u00e9sors \u00c9chang\u00e9s",
                     "concept": "Division par 10 et 100",
                     "text": "Utilise des tr\u00e9sors trouv\u00e9s pour \u00e9changer des ressources entre les \u00eeles.",
-                    "completed": false,
+                    "completed": true,
                     "image": "4_6.png",
                     "questions": [
                         {
                             "question": "Un coffre contient 200 pi\u00e8ces d'or. Si on les divise en 10 parts \u00e9gales, combien de pi\u00e8ces y a-t-il dans chaque part ?",
                             "answer": 20,
                             "hint": "Divise 200 par 10.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Un tr\u00e9sor compte 1000 rubis. Si on les r\u00e9partit \u00e9galement entre 100 coffres, combien de rubis y a-t-il dans chaque coffre ?",
                             "answer": 10,
                             "hint": "Divise 1000 par 100.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 }

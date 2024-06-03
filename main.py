@@ -19,12 +19,16 @@ def main():
         data = json.load(file)
         
     # Fonction pour mettre à jour la progression du joueur
-    def update_progression(level_index, question_index):
-        data['islands'][level_index]['levels'][question_index]['completed'] = True
+    def update_progression(island_index, level_index, question_index):
+        data['islands'][island_index]['levels'][level_index]['questions'][question_index]['completed'] = True
+        level_completed = all(question['completed'] for question in data['islands'][island_index]['levels'][level_index]['questions'])
+        data['islands'][island_index]['levels'][level_index]['completed'] = level_completed
+        island_completed = all(level['completed'] for level in data['islands'][island_index]['levels'])
+        data['islands'][island_index]['completed'] = island_completed
 
     # Fonction pour obtenir la progression d'une question
-    def get_question_progression(level_index, question_index):
-        return data['islands'][level_index]['levels'][question_index]['completed']
+    def get_question_progression(island_index, level_index, question_index):
+        return data['islands'][island_index]['levels'][level_index]['questions'][question_index]['completed']
 
     # Extraire les titres des niveaux pour chaque île
     archipelago_data = {}
@@ -52,14 +56,14 @@ def main():
         current_page = main_page
 
     archipelago_pages = {
-        "addition": ArchipelagoPage(screen, 'arch_add.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['addition']['titles'], archipelago_data['addition']['questions'], course_images['addition'], return_to_main_page,'Addition'),
-        "soustraction": ArchipelagoPage(screen, 'arch_sous.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['soustraction']['titles'], archipelago_data['soustraction']['questions'], course_images['soustraction'], return_to_main_page,'Soustraction'),
-        "multiplication": ArchipelagoPage(screen, 'arch_mul.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['multiplication']['titles'], archipelago_data['multiplication']['questions'], course_images['multiplication'], return_to_main_page,'Multiplication'),
-        "division": ArchipelagoPage(screen, 'arch_div.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
-                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['division']['titles'], archipelago_data['division']['questions'], course_images['division'], return_to_main_page,'Division'),
+        "addition": ArchipelagoPage(screen, 'arch_add.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png','ilot_todo.png', 'ilot_locked.png', 
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['addition']['titles'], archipelago_data['addition']['questions'], course_images['addition'], return_to_main_page,'Addition', data),
+        "soustraction": ArchipelagoPage(screen, 'arch_sous.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png','ilot_todo.png', 'ilot_locked.png', 
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['soustraction']['titles'], archipelago_data['soustraction']['questions'], course_images['soustraction'], return_to_main_page,'Soustraction', data),
+        "multiplication": ArchipelagoPage(screen, 'arch_mul.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png','ilot_todo.png', 'ilot_locked.png', 
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['multiplication']['titles'], archipelago_data['multiplication']['questions'], course_images['multiplication'], return_to_main_page,'Multiplication', data),
+        "division": ArchipelagoPage(screen, 'arch_div.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png','ilot_todo.png', 'ilot_locked.png', 
+                                    [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['division']['titles'], archipelago_data['division']['questions'], course_images['division'], return_to_main_page,'Division', data),
     }
 
     current_page = main_page

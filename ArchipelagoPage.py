@@ -3,12 +3,13 @@ from QuestionPage import QuestionPage
 from CoursePage import CoursePage
 
 class ArchipelagoPage:
-    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_locked_image, positions, background_image, titles, questions, course_images, return_callback,operation):
+    def __init__(self, screen, main_island_image, avatar_image, avatar_moving_image, ilot_done_image, ilot_todo_image, ilot_locked_image, positions, background_image, titles, questions, course_images, return_callback, operation, data):
         self.screen = screen
         self.main_island_image = main_island_image
         self.avatar_image = avatar_image
         self.avatar_moving_image = avatar_moving_image
         self.ilot_done_image = ilot_done_image
+        self.ilot_todo_image = ilot_todo_image
         self.ilot_locked_image = ilot_locked_image
         self.positions = positions
         self.background_image = background_image
@@ -16,7 +17,8 @@ class ArchipelagoPage:
         self.questions = questions
         self.course_images = course_images
         self.return_callback = return_callback
-        self.operation= operation
+        self.operation = operation
+        self.archipelago_data = data  # Store data for updates
 
         self.back_button = None
         self.back_button_rect = None
@@ -29,6 +31,15 @@ class ArchipelagoPage:
         self.scale_images()
         self.load_font()
         self.create_buttons()
+        self.update_ilot_states()  # Update îlot states initially
+
+    def update_progression(self, island_index, level_title, question_index):
+        for level in self.questions:
+            if level['title'] == level_title:
+                level['questions'][question_index]['completed'] = True
+                break
+        self.update_ilot_states()
+        print("Progress updated for:", island_index, level_title, question_index)
 
     def load_font(self):
         self.font = pygame.font.Font(None, 24)  # Default font and size 24
@@ -39,15 +50,17 @@ class ArchipelagoPage:
         self.avatar = pygame.image.load(self.avatar_image)
         self.avatar_moving = pygame.image.load(self.avatar_moving_image)
         self.ilot_done = pygame.image.load(self.ilot_done_image)
+        self.ilot_todo = pygame.image.load(self.ilot_todo_image)
         self.ilot_locked = pygame.image.load(self.ilot_locked_image)
         self.back_button = pygame.image.load('back_button.png')
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (1000, 600))
         self.main_island = pygame.transform.scale(self.main_island, (400, 400))
-        self.avatar = pygame.transform.scale(self.avatar,( 100, 100))
-        self.avatar_moving = pygame.transform.scale(self.avatar_moving,( 100, 100))
+        self.avatar = pygame.transform.scale(self.avatar, (100, 100))
+        self.avatar_moving = pygame.transform.scale(self.avatar_moving, (100, 100))
         self.ilot_done = pygame.transform.scale(self.ilot_done, (120, 120))
+        self.ilot_todo = pygame.transform.scale(self.ilot_todo, (120, 120))
         self.ilot_locked = pygame.transform.scale(self.ilot_locked, (120, 120))
         self.back_button = pygame.transform.scale(self.back_button, (50, 50))  # Adjust size as needed
 
@@ -67,7 +80,12 @@ class ArchipelagoPage:
         self.draw_buttons()
 
         for i, pos in enumerate(self.positions):
-            ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
+            if self.ilot_states[i] == 'done':
+                ilot_image = self.ilot_done
+            elif self.ilot_states[i] == 'todo':
+                ilot_image = self.ilot_todo
+            else:
+                ilot_image = self.ilot_locked
             self.screen.blit(ilot_image, pos)
             text_position = (pos[0] + ilot_image.get_width() // 2 - self.font.size(self.titles[i])[0] // 2, pos[1] - 20)
             self.draw_text(self.titles[i], text_position)
@@ -81,7 +99,12 @@ class ArchipelagoPage:
         self.draw_buttons()
 
         for i, pos in enumerate(self.positions):
-            ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
+            if self.ilot_states[i] == 'done':
+                ilot_image = self.ilot_done
+            elif self.ilot_states[i] == 'todo':
+                ilot_image = self.ilot_todo
+            else:
+                ilot_image = self.ilot_locked
             self.screen.blit(ilot_image, pos)
             text_position = (pos[0] + ilot_image.get_width() // 2 - self.font.size(self.titles[i])[0] // 2, pos[1] - 20)
             self.draw_text(self.titles[i], text_position)
@@ -103,6 +126,19 @@ class ArchipelagoPage:
             pygame.time.delay(50)
         self.draw_screen()  # Affiche l'image de l'avatar normal après le déplacement
 
+    def update_ilot_states(self):
+        todo_set = False  # Flag to set only one 'todo'
+        for i, level in enumerate(self.questions):
+            if all(question['completed'] for question in level['questions']):
+                self.ilot_states[i] = 'done'
+            elif not todo_set:
+                self.ilot_states[i] = 'todo'
+                todo_set = True
+            else:
+                self.ilot_states[i] = 'locked'
+
+        print("Updated îlot states:", self.ilot_states)
+
     def handle_event(self, event):
         if hasattr(self, 'question_page'):
             self.question_page.handle_event(event)
@@ -121,13 +157,18 @@ class ArchipelagoPage:
                     for i, pos in enumerate(self.positions):
                         ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked
                         if ilot_image.get_rect(topleft=pos).collidepoint(mouse_pos):
-                            self.move_avatar(pos)
-                            title = self.titles[i]
-                            text = self.questions[i]['text']
-                            questions = self.questions[i]['questions']
-                            image_qst = self.questions[i]['image']
-                            self.question_page = QuestionPage(self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago, self.operation)
-                            break
+                            if self.ilot_states[i] == 'todo' or self.ilot_states[i] == 'done':
+                                self.move_avatar(pos)
+                                title = self.titles[i]
+                                text = self.questions[i]['text']
+                                questions = self.questions[i]['questions']
+                                image_qst = self.questions[i]['image']
+                                self.question_page = QuestionPage(
+                                    self.screen, 'back_qst.png', title, text, questions, image_qst, self.return_to_archipelago, self.operation, self.update_ilot_states, self.update_progression, i, self.archipelago_data
+                                )
+                                break
+                            else:
+                                print("Vous n'avez pas encore le niveau pour accéder à cet îlot.")
 
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = event.pos
@@ -143,6 +184,8 @@ class ArchipelagoPage:
             del self.course_page
         if hasattr(self, 'question_page'):
             del self.question_page
+
+        self.update_ilot_states()  # Update îlot states after returning
 
     def update(self):
         if hasattr(self, 'question_page'):

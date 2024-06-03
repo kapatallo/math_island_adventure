@@ -99,6 +99,7 @@ class MainPage:
         
 
     def draw_screen(self):
+        self.load_json_data()
         self.screen.blit(self.background, (0, 0))
         self.screen.blit(self.addition_island, self.addition_pos)
         self.screen.blit(self.soustraction_island, self.soustraction_pos)
