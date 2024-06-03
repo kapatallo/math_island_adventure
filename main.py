@@ -4,6 +4,8 @@ import sys
 import json
 from MainPage import MainPage
 from ArchipelagoPage import ArchipelagoPage
+from HomePage import HomePage
+from ProfilePage import ProfilePage
 
 def main():
 
@@ -43,13 +45,13 @@ def main():
         "multiplication": ['cours/mul1.png', 'cours/mul2.png', 'cours/mul3.png', 'cours/mul4.png', 'cours/mul5.png'],
         "division": ['cours/div1.png', 'cours/div2.png', 'cours/div3.png', 'cours/div4.png']
     }
-
-    main_page = MainPage(screen, screen_width, screen_height)
-
     def return_to_main_page():
         nonlocal current_page
         main_page.current_archipelago = None  # Reset the current archipelago to None
         current_page = main_page
+    
+
+  
 
     archipelago_pages = {
         "addition": ArchipelagoPage(screen, 'arch_add.png', 'avatar.png', 'avatar_moving.png', 'ilot_done.png', 'ilot_locked.png', 
@@ -62,7 +64,31 @@ def main():
                                     [(150, 150), (750, 160), (190, 470), (700, 460), (100, 300), (800, 320)], 'back.png', archipelago_data['division']['titles'], archipelago_data['division']['questions'], course_images['division'], return_to_main_page,'Division'),
     }
 
-    current_page = main_page
+   
+    def start_game():
+        nonlocal current_page
+        current_page = main_page
+
+    def show_profile():
+        nonlocal current_page
+        current_page = profile_page
+
+    def return_to_home():
+        nonlocal current_page
+        current_page = home_page
+    
+    
+
+    home_page = HomePage(screen, start_game, show_profile)
+    main_page = MainPage(screen, screen_width, screen_height)
+    profile_page = ProfilePage(screen, return_to_home)
+
+    
+    current_page = home_page
+    
+    
+
+    
     running = True
     while running:
         for event in pygame.event.get():
@@ -74,8 +100,9 @@ def main():
 
         if main_page.current_archipelago:
             current_page = archipelago_pages[main_page.current_archipelago]
-
+        
         current_page.update()
+        
 
 if __name__ == "__main__":
     main()
