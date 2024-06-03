@@ -278,20 +278,20 @@
                     "title": "Les Papyrus du Scorpion",
                     "concept": "Multiplication avec des nombres \u00e0 un chiffre",
                     "text": "Aide le scorpion \u00e0 trouver des morceaux de papyrus.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_1.png",
                     "questions": [
                         {
                             "question": "Hier, le scorpion a trouv\u00e9 4 morceaux de papyrus. Aujourd'hui, il en trouve il en trouve 3 fois plus. Combien de morceaux de papyrus a-t-il en tout ?",
                             "answer": 12,
                             "hint": "Multiplie 4 par 3.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il a 6 papyrus, et son ami en trouve 2 fois plus. Combien de papyrus son ami a-t-il maintenant ?",
                             "answer": 12,
                             "hint": "Multiplie 6 par 2.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },

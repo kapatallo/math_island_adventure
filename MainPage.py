@@ -37,9 +37,6 @@ class MainPage:
                     if not level["completed"]:
                         return False
         return True
-        
-        
-    
 
     def load_images(self):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -53,10 +50,12 @@ class MainPage:
         self.avatar_moving = pygame.image.load('avatar_moving.png')
         self.logo = pygame.image.load('logo.png')
         self.welcome_message = pygame.image.load('msg_welcome.png')
-        self.add_trophy=pygame.image.load('add_trophy.png')
-        self.mul_trophy=pygame.image.load('mul_trophy.png')
-        self.div_trophy=pygame.image.load('div_trophy.png')
-        self.sous_trophy=pygame.image.load('sous_trophy.png')
+        self.add_trophy = pygame.image.load('add_trophy.png')
+        self.mul_trophy = pygame.image.load('mul_trophy.png')
+        self.div_trophy = pygame.image.load('div_trophy.png')
+        self.sous_trophy = pygame.image.load('sous_trophy.png')
+        self.profil_btn = pygame.image.load('profil_btn.png')  # Load profile button image
+        self.back_button = pygame.image.load('back_button.png')  # Load back button image for ProfilePage
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
@@ -68,10 +67,12 @@ class MainPage:
         self.avatar_moving = self.scale_image(self.avatar_moving, 100, 100)
         self.logo = self.scale_image(self.logo, 250, 250)
         self.welcome_message = self.scale_image(self.welcome_message, 600, 150)
-        self.add_trophy=self.scale_image(self.add_trophy,50,50)
-        self.sous_trophy=self.scale_image(self.sous_trophy,50,50)
-        self.mul_trophy=self.scale_image(self.mul_trophy,50,50)
-        self.div_trophy=self.scale_image(self.div_trophy,50,50)
+        self.add_trophy = self.scale_image(self.add_trophy, 50, 50)
+        self.sous_trophy = self.scale_image(self.sous_trophy, 50, 50)
+        self.mul_trophy = self.scale_image(self.mul_trophy, 50, 50)
+        self.div_trophy = self.scale_image(self.div_trophy, 50, 50)
+        self.profil_btn = self.scale_image(self.profil_btn, 50, 50)  # Scale profile button
+        self.back_button = self.scale_image(self.back_button, 50, 50)  # Scale back button
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -84,6 +85,7 @@ class MainPage:
             width = int(height * aspect_ratio)
         return pygame.transform.scale(image, (width, height))
 
+
     def set_positions(self):
         self.addition_pos = (50, 80)
         self.soustraction_pos = (600, 150)
@@ -91,12 +93,12 @@ class MainPage:
         self.division_pos = (650, 350)
         self.logo_pos = (380, 3)
         self.avatar_pos = [(self.screen_width // 2 - self.avatar.get_width() // 2)-20, self.screen_height // 2 - self.avatar.get_height() // 2]
-        self.welcome_message_pos = (450,100)
-        self.add_trophy_pos = (40,20)
-        self.sous_trophy_pos = (80,20)
-        self.mul_trophy_pos = (120,20)
-        self.div_trophy_pos = (160,20)
-        
+        self.welcome_message_pos = (450, 100)
+        self.add_trophy_pos = (40, 20)
+        self.sous_trophy_pos = (80, 20)
+        self.mul_trophy_pos = (120, 20)
+        self.div_trophy_pos = (160, 20)
+        self.profil_btn_pos = (self.screen_width - 60, 10)  # Position profile button in the top right corner
 
     def draw_screen(self):
         self.load_json_data()
@@ -107,6 +109,7 @@ class MainPage:
         self.screen.blit(self.division_island, self.division_pos)
         self.screen.blit(self.avatar, self.avatar_pos)
         self.screen.blit(self.logo, self.logo_pos)
+        self.screen.blit(self.profil_btn, self.profil_btn_pos)  # Draw profile button
         if self.is_archipelago_completed("Addition"):
             self.screen.blit(self.add_trophy, self.add_trophy_pos)
         if self.is_archipelago_completed("Soustraction"):
@@ -129,6 +132,15 @@ class MainPage:
         self.screen.blit(self.division_island, self.division_pos)
         self.screen.blit(self.avatar_moving, self.avatar_pos)
         self.screen.blit(self.logo, self.logo_pos)
+        self.screen.blit(self.profil_btn, self.profil_btn_pos)  # Draw profile button
+        if self.is_archipelago_completed("Addition"):
+            self.screen.blit(self.add_trophy, self.add_trophy_pos)
+        if self.is_archipelago_completed("Soustraction"):
+            self.screen.blit(self.sous_trophy, self.sous_trophy_pos)
+        if self.is_archipelago_completed("Multiplication"):
+            self.screen.blit(self.mul_trophy, self.mul_trophy_pos)
+        if self.is_archipelago_completed("Division"):
+            self.screen.blit(self.div_trophy, self.div_trophy_pos)
         pygame.display.flip()
 
     def move_avatar(self, target_island_pos, target_island_img):
@@ -163,14 +175,20 @@ class MainPage:
             elif self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos):
                 self.avatar_target = "division"
                 self.move_avatar(self.division_pos, self.division_island)
+            elif self.profil_btn.get_rect(topleft=self.profil_btn_pos).collidepoint(mouse_pos):
+                self.avatar_target = "profil"
+                self.current_archipelago = self.avatar_target  # Go to ProfilePage
+
         if event.type == pygame.MOUSEMOTION:
             mouse_pos = event.pos
             if (self.addition_island.get_rect(topleft=self.addition_pos).collidepoint(mouse_pos) or
                 self.soustraction_island.get_rect(topleft=self.soustraction_pos).collidepoint(mouse_pos) or
                 self.multiplication_island.get_rect(topleft=self.multiplication_pos).collidepoint(mouse_pos) or
-                self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos)):
+                self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos) or
+                self.profil_btn.get_rect(topleft=self.profil_btn_pos).collidepoint(mouse_pos)):
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
             else:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+
     def update(self):
         self.draw_screen()
