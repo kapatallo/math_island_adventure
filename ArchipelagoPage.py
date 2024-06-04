@@ -18,7 +18,7 @@ class ArchipelagoPage:
         self.course_images = course_images
         self.return_callback = return_callback
         self.operation = operation
-        self.archipelago_data = data  # Store data for updates
+        self.archipelago_data = data
 
         self.back_button = None
         self.back_button_rect = None
@@ -123,7 +123,7 @@ class ArchipelagoPage:
             self.avatar_pos[0] += x_step
             self.avatar_pos[1] += y_step
             self.draw_screen_moving()
-            pygame.time.delay(50)
+            pygame.time.delay(30)
         self.draw_screen()  # Affiche l'image de l'avatar normal après le déplacement
 
     def update_ilot_states(self):
@@ -152,7 +152,7 @@ class ArchipelagoPage:
                 main_island_rect = self.main_island.get_rect(topleft=(300, 30))
                 if main_island_rect.collidepoint(mouse_pos):
                     self.move_avatar((400, 330))
-                    self.course_page = CoursePage(self.screen, self.course_images, self.return_to_archipelago)
+                    self.course_page = CoursePage(self.screen, self.course_images, self.return_to_archipelago,self.operation)
                 else:
                     for i, pos in enumerate(self.positions):
                         ilot_image = self.ilot_done if self.ilot_states[i] == 'done' else self.ilot_locked

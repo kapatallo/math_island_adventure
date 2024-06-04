@@ -42,10 +42,10 @@ def main():
 
     # Définir les images du cours
     course_images = {
-        "addition": ['cours/add1.png', 'cours/add2.png', 'cours/add3.png', 'cours/add4.png'],
-        "soustraction": ['cours/sous1.png', 'cours/sous2.png', 'cours/sous3.png', 'cours/sous4.png'],
-        "multiplication": ['cours/mul1.png', 'cours/mul2.png', 'cours/mul3.png', 'cours/mul4.png', 'cours/mul5.png'],
-        "division": ['cours/div1.png', 'cours/div2.png', 'cours/div3.png', 'cours/div4.png']
+        "addition": ['cours/add1.png', 'cours/add2.png', 'cours/add3.png','cours/add4.png', 'cours/add5.png'],
+        "soustraction": ['cours/sous1.png', 'cours/sous2.png', 'cours/sous3.png', 'cours/sous4.png','cours/sous5.png'],
+        "multiplication": ['cours/mul1.png', 'cours/mul2.png', 'cours/mul3.png', 'cours/mul4.png', 'cours/mul5.png','cours/mul6.png'],
+        "division": ['cours/div1.png', 'cours/div2.png', 'cours/div3.png', 'cours/div4.png','cours/div5.png']
     }
 
     main_page = MainPage(screen, screen_width, screen_height)

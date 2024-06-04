@@ -16,6 +16,7 @@ class MainPage:
         self.avatar_target = None
         self.current_archipelago = None
         self.show_welcome_message = True
+        self.show_locked_message = False
 
     def load_json_data(self):
         # Charger les données du fichier JSON
@@ -38,6 +39,16 @@ class MainPage:
                         return False
         return True
 
+    def can_access_archipelago(self, theme):
+        themes = ['Addition', 'Soustraction', 'Multiplication', 'Division']
+        for i, current_theme in enumerate(themes):
+            if current_theme == theme:
+                if i == 0:
+                    return True  # The first archipelago is always accessible
+                previous_theme = themes[i - 1]
+                return self.is_archipelago_completed(previous_theme)
+        return False
+
     def load_images(self):
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -56,6 +67,7 @@ class MainPage:
         self.sous_trophy = pygame.image.load('sous_trophy.png')
         self.profil_btn = pygame.image.load('profil_btn.png')  # Load profile button image
         self.back_button = pygame.image.load('back_button.png')  # Load back button image for ProfilePage
+        self.locked_message = pygame.image.load('msg_locked.png')  # Load locked message image
 
     def scale_images(self):
         self.background = pygame.transform.scale(self.background, (self.screen_width, self.screen_height))
@@ -73,6 +85,7 @@ class MainPage:
         self.div_trophy = self.scale_image(self.div_trophy, 50, 50)
         self.profil_btn = self.scale_image(self.profil_btn, 50, 50)  # Scale profile button
         self.back_button = self.scale_image(self.back_button, 50, 50)  # Scale back button
+        self.locked_message = self.scale_image(self.locked_message, 600, 150)  # Scale locked message
 
     def scale_image(self, image, max_width, max_height):
         width, height = image.get_size()
@@ -122,6 +135,10 @@ class MainPage:
         if self.show_welcome_message:
             self.screen.blit(self.welcome_message, self.welcome_message_pos)
         
+        if self.show_locked_message:
+            locked_message_pos = (self.avatar_pos[0] + 40, self.avatar_pos[1] - 160)
+            self.screen.blit(self.locked_message, locked_message_pos)
+
         pygame.display.flip()
 
     def draw_screen_moving(self):
@@ -154,12 +171,13 @@ class MainPage:
             self.avatar_pos[0] += x_step
             self.avatar_pos[1] += y_step
             self.draw_screen_moving()
-            pygame.time.delay(2)
+            pygame.time.delay(30)
         self.current_archipelago = self.avatar_target
 
     def handle_event(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = event.pos
+            self.show_locked_message = False
             if self.show_welcome_message:
                 self.show_welcome_message = False
 
@@ -167,14 +185,23 @@ class MainPage:
                 self.avatar_target = "addition"
                 self.move_avatar(self.addition_pos, self.addition_island)
             elif self.soustraction_island.get_rect(topleft=self.soustraction_pos).collidepoint(mouse_pos):
-                self.avatar_target = "soustraction"
-                self.move_avatar(self.soustraction_pos, self.soustraction_island)
+                if self.can_access_archipelago("Soustraction"):
+                    self.avatar_target = "soustraction"
+                    self.move_avatar(self.soustraction_pos, self.soustraction_island)
+                else:
+                    self.show_locked_message = True
             elif self.multiplication_island.get_rect(topleft=self.multiplication_pos).collidepoint(mouse_pos):
-                self.avatar_target = "multiplication"
-                self.move_avatar(self.multiplication_pos, self.multiplication_island)
+                if self.can_access_archipelago("Multiplication"):
+                    self.avatar_target = "multiplication"
+                    self.move_avatar(self.multiplication_pos, self.multiplication_island)
+                else:
+                    self.show_locked_message = True
             elif self.division_island.get_rect(topleft=self.division_pos).collidepoint(mouse_pos):
-                self.avatar_target = "division"
-                self.move_avatar(self.division_pos, self.division_island)
+                if self.can_access_archipelago("Division"):
+                    self.avatar_target = "division"
+                    self.move_avatar(self.division_pos, self.division_island)
+                else:
+                    self.show_locked_message = True
             elif self.profil_btn.get_rect(topleft=self.profil_btn_pos).collidepoint(mouse_pos):
                 self.avatar_target = "profil"
                 self.current_archipelago = self.avatar_target  # Go to ProfilePage

@@ -20,9 +20,9 @@
                             "completed": true
                         },
                         {
-                            "question": "Coco a 5 noix de coco et en ramasse encore 6. Combien de noix de coco a-t-il maintenant ?",
-                            "answer": 7,
-                            "hint": "Ajoute 5 et 6 ensemble.",
+                            "question": "Coco a 3 noix de coco et en ramasse encore 7. Combien de noix de coco a-t-il maintenant ?",
+                            "answer": 10,
+                            "hint": "Ajoute 3 et 7 ensemble.",
                             "completed": true
                         }
                     ]
@@ -35,14 +35,14 @@
                     "completed": true,
                     "questions": [
                         {
-                            "question": "Il y a 3 pommes sur l'arbre et 4 pommes au sol. Combien de pommes y a-t-il en tout ?",
-                            "answer": 7,
+                            "question": "Il y a 13 pommes sur l'arbre et 5 pommes au sol. Combien de pommes y a-t-il en tout ?",
+                            "answer": 18,
                             "hint": "Compte toutes les pommes.",
                             "completed": true
                         },
                         {
-                            "question": "Nous avons 8 oranges et 7 mandarines. Combien de fruits avons-nous ?",
-                            "answer": 15,
+                            "question": "Nous avons 11 oranges et 8 mandarines. Combien de fruits avons-nous ?",
+                            "answer": 19,
                             "hint": "Ajoute oranges et mandarines.",
                             "completed": true
                         }
@@ -271,7 +271,7 @@
         {
             "name": "L'\u00cele des Pyramides",
             "theme": "Multiplication",
-            "completed": false,
+            "completed": true,
             "progress": 0,
             "levels": [
                 {
@@ -299,20 +299,20 @@
                     "title": "Les Portes du Temple",
                     "concept": "Table de multiplication de 2, 3, 4 et 5",
                     "text": "R\u00e9sous des \u00e9nigmes dans un temple pour ouvrir des portes.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_2.png",
                     "questions": [
                         {
                             "question": "R\u00e9sous : 3 x 4 = ?",
                             "answer": 12,
                             "hint": "Utilise la table de multiplication pour 3.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "R\u00e9sous : 5 x 2 = ?",
                             "answer": 10,
                             "hint": "Utilise la table de multiplication pour 5.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -320,20 +320,20 @@
                     "title": "Les Perles des Coquillages",
                     "concept": "Multiplication visuelle (groupes d'objets)",
                     "text": "Trouve des perles en comptant les groupes de coquillages.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_3.png",
                     "questions": [
                         {
                             "question": "Il y a 3 groupes de 4 coquillages. Combien de coquillages y a-t-il en tout ?",
                             "answer": 12,
                             "hint": "Multiplie 3 par 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Nous avons 5 groupes de 2 perles. Combien de perles avons-nous ?",
                             "answer": 10,
                             "hint": "Multiplie 5 par 2.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -341,20 +341,20 @@
                     "title": "Les Statues du Temple",
                     "concept": "Multiplication avec des nombres \u00e0 deux chiffres",
                     "text": "Construis des statues en multipliant des blocs de pierre.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_4.png",
                     "questions": [
                         {
                             "question": "Il y a 12 blocs de pierre, on les multiplie par 3. Combien de blocs avons-nous en tout ?",
                             "answer": 36,
                             "hint": "Multiplie 12 par 3.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Nous avons 15 blocs de pierre, on les multiplie par 4. Combien de blocs avons-nous maintenant ?",
                             "answer": 60,
                             "hint": "Multiplie 15 par 4.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -362,20 +362,20 @@
                     "title": "La Caravane des Marchandises",
                     "concept": "Probl\u00e8mes simples de mots",
                     "text": "Aide une caravane \u00e0 transporter des marchandises.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_5.png",
                     "questions": [
                         {
                             "question": "Marie a 5 sacs avec 4 pommes chacun. Combien de pommes a-t-elle en tout ?",
                             "answer": 20,
                             "hint": "Multiplie 5 par 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Il y a 6 chameaux portant chacun 3 sacs. Combien de sacs y a-t-il en tout ?",
                             "answer": 18,
                             "hint": "Multiplie 6 par 3.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 },
@@ -383,20 +383,20 @@
                     "title": "Les Hi\u00e9roglyphes Secrets",
                     "concept": "Multiplication par 10 et 100",
                     "text": "Utilise des hi\u00e9roglyphes pour d\u00e9chiffrer des messages secrets.",
-                    "completed": false,
+                    "completed": true,
                     "image": "3_6.png",
                     "questions": [
                         {
                             "question": "Multiplie 10 par 4. Combien cela fait-il ?",
                             "answer": 40,
                             "hint": "Multiplie 10 par 4.",
-                            "completed": false
+                            "completed": true
                         },
                         {
                             "question": "Multiplie 100 par 2. Combien cela fait-il ?",
                             "answer": 200,
                             "hint": "Multiplie 100 par 2.",
-                            "completed": false
+                            "completed": true
                         }
                     ]
                 }
